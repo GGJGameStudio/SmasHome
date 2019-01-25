@@ -44,8 +44,10 @@ public class PlayerController : MonoBehaviour
         if (front)
         {
             gameObject.layer = LayerMask.NameToLayer("PlayerFront");
+            gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "PlayerFront";
         } else
         {
+            gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "PlayerBack";
             gameObject.layer = LayerMask.NameToLayer("PlayerBack");
         }
 

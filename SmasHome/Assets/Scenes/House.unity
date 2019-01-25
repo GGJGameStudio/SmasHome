@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 156371786}
   - component: {fileID: 156371785}
   - component: {fileID: 156371784}
-  m_Layer: 10
+  m_Layer: 12
   m_Name: Square (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 156371783}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.06, y: 1.53, z: 0}
+  m_LocalPosition: {x: -6.71, y: 1.57, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -508,7 +508,7 @@ GameObject:
   - component: {fileID: 405381419}
   - component: {fileID: 405381418}
   - component: {fileID: 405381417}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Square (6)
   m_TagString: Floor
   m_Icon: {fileID: 0}
@@ -806,8 +806,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 96194315
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 597782b7e73973f4cbf39e59e9795833, type: 3}
   m_Color: {r: 0.5, g: 0.28537735, b: 0.28537735, a: 1}
@@ -828,7 +828,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794883512}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.17, y: 1.59, z: 0}
+  m_LocalPosition: {x: -4.57, y: 1.49, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -905,6 +905,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048967559217271963, guid: 3056ed9a8e17d68438132ce8eff27a56,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.7264151
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048967559217271963, guid: 3056ed9a8e17d68438132ce8eff27a56,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.67501783
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048967559217271963, guid: 3056ed9a8e17d68438132ce8eff27a56,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.67501783
       objectReference: {fileID: 0}
     - target: {fileID: 4048967559217272036, guid: 3056ed9a8e17d68438132ce8eff27a56,
         type: 3}
@@ -1035,7 +1050,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1162605687}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.31, y: -0.56, z: 0}
+  m_LocalPosition: {x: 8, y: 0.44, z: 0}
   m_LocalScale: {x: 2, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
