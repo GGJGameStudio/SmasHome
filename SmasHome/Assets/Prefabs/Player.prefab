@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4048967559217272037}
   - component: {fileID: 4048967559217272036}
   m_Layer: 0
-  m_Name: Square (1)
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,7 +102,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &4048967559217272037
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -141,3 +141,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f089260c4c51fe4a9e328224ed90cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PlayerNumber: 0
