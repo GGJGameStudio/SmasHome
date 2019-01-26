@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
 
 
     public int PlayerNumber;
+    public float Age;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
         grabbed = null;
         rightdir = true;
         strikeTimer = 0f;
+        Age = 0.5f;
 
     }
 
@@ -104,7 +106,7 @@ public class PlayerController : MonoBehaviour
         var grab = gameObject.transform.Find("Grab").GetComponent<Grab>();
         grab.transform.localPosition = new Vector3((rightdir?1:-1) * Mathf.Abs(grab.transform.localPosition.x), grab.transform.localPosition.y, grab.transform.localPosition.z);
 
-        if (Input.GetButtonDown("Grab" + PlayerNumber))
+        if (Input.GetButtonDown("Grab" + PlayerNumber) && strikeTimer < 0)
         {
             if (grabbed == null)
             {
@@ -114,7 +116,8 @@ public class PlayerController : MonoBehaviour
                     grabbed.transform.parent = grab.transform;
                     grabbed.transform.localPosition = Vector3.zero;
                     grabbed.GetComponent<BoxCollider2D>().enabled = false;
-                    grabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                    grabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+                    grabbed.GetComponent<ObjectBasic>().Owner = PlayerNumber;
                 }
             }
             else
@@ -123,6 +126,7 @@ public class PlayerController : MonoBehaviour
                 grabbed.GetComponent<BoxCollider2D>().enabled = true;
                 grabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 grabbed.GetComponent<ObjectBasic>().Throw(rightdir);
+                grabbed.GetComponent<ObjectBasic>().Flying = true;
                 grabbed = null;
             }
         }
@@ -140,11 +144,20 @@ public class PlayerController : MonoBehaviour
             if (grabbed != null)
             {
                 grabbed.GetComponent<ObjectBasic>().Strike(rightdir);
+                grabbed.GetComponent<BoxCollider2D>().enabled = true;
+                grabbed.GetComponent<BoxCollider2D>().isTrigger = true;
+                grabbed.GetComponent<ObjectBasic>().Striking = true;
                 strikeTimer = 0.5f;
             } else
             {
                 // ??
             }
+        }
+        if (strikeTimer < 0 && grabbed != null)
+        {
+            grabbed.GetComponent<BoxCollider2D>().enabled = false;
+            grabbed.GetComponent<BoxCollider2D>().isTrigger = false;
+            grabbed.GetComponent<ObjectBasic>().Striking = false;
         }
     }
 
@@ -162,7 +175,11 @@ public class PlayerController : MonoBehaviour
             }
         } else if (collision2D.gameObject.tag == "Object")
         {
-            Debug.Log("ouille");
+            var obj = collision2D.gameObject.GetComponent<ObjectBasic>();
+            if (obj.Flying && obj.Owner != PlayerNumber)
+            {
+                obj.GetComponent<ObjectBasic>().ThrowHit(gameObject);
+            }
         }
         
     }
