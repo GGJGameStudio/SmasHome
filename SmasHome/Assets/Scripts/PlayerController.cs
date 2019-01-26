@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rigidbody;
     private bool onFloor;
+    private bool front;
 
     public int PlayerNumber;
 
@@ -18,6 +19,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigidbody = GetComponent<Rigidbody2D>();
         onFloor = true;
+        front = true;
     }
 
     // Update is called once per frame
@@ -25,6 +27,7 @@ public class PlayerController : MonoBehaviour
     {
         var speed = 3;
         var horizontal = Input.GetAxis("Horizontal" + PlayerNumber);
+        var vertical = Input.GetAxis("Vertical" + PlayerNumber);
         if (horizontal != 0)
         {
             transform.localPosition = transform.localPosition + new Vector3(horizontal * speed * Time.deltaTime, 0, 0);
@@ -46,6 +49,28 @@ public class PlayerController : MonoBehaviour
         else if (horizontal > 0)
         {
             spriteRenderer.flipX = false;
+        }
+
+        if (vertical != 0)
+        {
+            if (vertical > 0.9)
+            {
+                front = false;
+            }
+            if (vertical < -0.9)
+            {
+                front = true;
+            }
+        }
+        
+        if (front)
+        {
+            gameObject.layer = LayerMask.NameToLayer("PlayerFront");
+            gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "PlayerFront";
+        } else
+        {
+            gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "PlayerBack";
+            gameObject.layer = LayerMask.NameToLayer("PlayerBack");
         }
 
         if (Input.GetButtonDown("Jump" + PlayerNumber) && onFloor)

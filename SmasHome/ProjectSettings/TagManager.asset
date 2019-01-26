@@ -14,12 +14,12 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - PlayerFront
+  - PlayerBack
+  - EnvironmentFront
+  - EnvironmentBack
+  - Environment
+  - Object
   - 
   - 
   - 
@@ -41,4 +41,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: EnvironmentBack
+    uniqueID: 96194315
+    locked: 0
+  - name: PlayerBack
+    uniqueID: 1210374807
+    locked: 0
+  - name: PlayerFront
+    uniqueID: 2203274741
+    locked: 0
+  - name: EnvironmentFront
+    uniqueID: 353614167
+    locked: 0
+  - name: Object
+    uniqueID: 3814443913
     locked: 0
