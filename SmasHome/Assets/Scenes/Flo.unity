@@ -312,6 +312,11 @@ PrefabInstance:
       propertyPath: jumpAudio
       value: 
       objectReference: {fileID: 519758762}
+    - target: {fileID: 2038614384386887063, guid: 3056ed9a8e17d68438132ce8eff27a56,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3056ed9a8e17d68438132ce8eff27a56, type: 3}
 --- !u!1 &519758761
