@@ -4,17 +4,12 @@ using UnityEngine;
 
 public class ObjectTest : ObjectBasic
 {
+    private Object bubblePrefab;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        bubblePrefab = Resources.Load("Prefabs/Bubble");
     }
 
     public override void Throw(bool rightdir)
@@ -24,5 +19,20 @@ public class ObjectTest : ObjectBasic
         gameObject.GetComponent<Rigidbody2D>().AddTorque(100);
     }
 
-    
+    public override void StrikeHit(GameObject player)
+    {
+        base.StrikeHit(player);
+
+        var bubblePos = player.transform.position;
+
+        bubblePos.x += 0.5f;
+        bubblePos.y += 0.5f;
+
+        var bubble = Instantiate(bubblePrefab, bubblePos, Quaternion.identity) as GameObject;
+
+        if (bubble != null)
+        {
+            bubble.GetComponent<BubbleBehaviour>().Pop();
+        }
+    }
 }

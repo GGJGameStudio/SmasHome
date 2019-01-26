@@ -12,8 +12,8 @@ public class PlayerController : MonoBehaviour
     private bool rightdir;
     private GameObject grabbed;
     private float strikeTimer;
-    [SerializeField]
-    private AudioSource damageAudio;
+    [SerializeField] private AudioSource damageAudio;
+    [SerializeField] private AudioSource jumpAudio;
 
 
     public int PlayerNumber;
@@ -72,6 +72,7 @@ public class PlayerController : MonoBehaviour
             rigidbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
             onFloor = false;
             animator.SetBool("Jumping", true);
+            jumpAudio.Play();
         }
         else
         {
@@ -191,7 +192,7 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
+        
     void OnCollisionStay2D(Collision2D collision2D)
     {
         if (collision2D.gameObject.tag == "Floor" || collision2D.gameObject.tag == "Player")
