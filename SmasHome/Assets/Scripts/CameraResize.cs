@@ -6,12 +6,12 @@ using UnityEngine;
 public class CameraResize : MonoBehaviour
 {
     // Start is called before the first frame update
-
-    Camera mainCam;
+    private Camera mainCam;
+   
 
     void Start()
     {
-        mainCam = GameObject.Find("Main Camera").GetComponent<Camera>();
+        mainCam = GetComponent<Camera>();
         
     }
 
@@ -23,9 +23,11 @@ public class CameraResize : MonoBehaviour
         Vector3 MaxBox = new Vector3(0.0f, 0.0f, 0.0f); ;
 
 
-        for (int i = 0;i < nbChild;i++)
+        GameObject[] playerS = GameObject.FindGameObjectsWithTag("Player");
+        int i = 0;
+        foreach (GameObject player in playerS)
         {
-            Transform trans = transform.GetChild(i);
+            Transform trans = player.transform;
             if (i == 0)
             {
                 MinBox = trans.position;
@@ -52,6 +54,7 @@ public class CameraResize : MonoBehaviour
                     MaxBox.x = trans.position.x;
                 }
             }
+            i++;
 
         }
 
