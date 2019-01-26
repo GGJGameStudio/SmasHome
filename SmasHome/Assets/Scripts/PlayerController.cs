@@ -82,6 +82,7 @@ public class PlayerController : MonoBehaviour
             rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             onFloor = false;
             animator.SetBool("Jumping", true);
+            animator.SetBool("Falling", true);
             jumpAudio.Play();
         }
         else
@@ -203,7 +204,6 @@ public class PlayerController : MonoBehaviour
         {
             onFloor = true;
             animator.SetBool("Jumping", false);
-            animator.SetBool("Landing", true);
 
             if (collision2D.gameObject.tag == "Player")
             {
