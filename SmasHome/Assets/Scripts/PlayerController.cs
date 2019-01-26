@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         UpdatePlayerPhase();
         UpdatePlayerSprite();
@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
         var horizontal = Input.GetAxis("Horizontal" + PlayerNumber);
         if (horizontal != 0)
         {
-            transform.localPosition = transform.localPosition + new Vector3(horizontal * Speed * Time.fixedDeltaTime, 0, 0);
+            transform.localPosition = transform.localPosition + new Vector3(horizontal * Speed * Time.deltaTime, 0, 0);
 
             if (this.onFloor)
             {
@@ -76,9 +76,12 @@ public class PlayerController : MonoBehaviour
             rightdir = true;
         }
 
+        
+
         //Jump
         if (Input.GetButtonDown("Jump" + PlayerNumber) && onFloor && CurrentPhase > PlayerPhase.BABY)
         {
+            //Debug.Log("jump");
             rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             onFloor = false;
             animator.SetBool("Jumping", true);
@@ -159,7 +162,7 @@ public class PlayerController : MonoBehaviour
 
         if (throwing)
         {
-            throwTimer += Time.fixedDeltaTime;
+            throwTimer += Time.deltaTime;
             if (throwTimer > 0.5f)
             {
                 throwTimer = 0.5f;
@@ -173,7 +176,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //strike
-        strikeTimer -= Time.fixedDeltaTime;
+        strikeTimer -= Time.deltaTime;
         if (Input.GetButton("Strike" + PlayerNumber) && strikeTimer < 0)
         {
             if (grabbed != null)
