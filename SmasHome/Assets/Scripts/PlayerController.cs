@@ -9,7 +9,9 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rigidbody;
     private bool onFloor;
     private bool front;
+    private bool rightdir;
     private GameObject grabbed;
+    private float strikeTimer;
 
 
     public int PlayerNumber;
@@ -23,6 +25,9 @@ public class PlayerController : MonoBehaviour
         onFloor = true;
         front = true;
         grabbed = null;
+        rightdir = true;
+        strikeTimer = 0f;
+
     }
 
     // Update is called once per frame
@@ -49,10 +54,12 @@ public class PlayerController : MonoBehaviour
         if (horizontal < 0)
         {
             spriteRenderer.flipX = true;
+            rightdir = false;
         }
         else if (horizontal > 0)
         {
             spriteRenderer.flipX = false;
+            rightdir = true;
         }
 
         //Jump
@@ -93,11 +100,13 @@ public class PlayerController : MonoBehaviour
         }
 
         //grab
+        var grab = gameObject.transform.Find("Grab").GetComponent<Grab>();
+        grab.transform.localPosition = new Vector3((rightdir?1:-1) * Mathf.Abs(grab.transform.localPosition.x), grab.transform.localPosition.y, grab.transform.localPosition.z);
+
         if (Input.GetButtonDown("Grab" + PlayerNumber))
         {
             if (grabbed == null)
             {
-                var grab = gameObject.transform.Find("Grab").GetComponent<Grab>();
                 if (grab.CanGrab.Count > 0)
                 {
                     grabbed = grab.CanGrab[0];
@@ -112,14 +121,29 @@ public class PlayerController : MonoBehaviour
                 grabbed.transform.parent = null;
                 grabbed.GetComponent<BoxCollider2D>().enabled = true;
                 grabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                grabbed.GetComponent<Rigidbody2D>().AddForce(new Vector2(-3, 1), ForceMode2D.Impulse);
+                grabbed.GetComponent<ObjectBasic>().Throw(rightdir);
                 grabbed = null;
             }
         }
 
-        if (grabbed != null)
+        if (grabbed != null && strikeTimer < 0)
         {
             grabbed.transform.localPosition = Vector3.zero;
+            grabbed.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+
+        //strike
+        strikeTimer -= Time.deltaTime;
+        if (Input.GetButtonDown("Strike" + PlayerNumber) && strikeTimer < 0)
+        {
+            if (grabbed != null)
+            {
+                grabbed.GetComponent<ObjectBasic>().Strike(rightdir);
+                strikeTimer = 0.5f;
+            } else
+            {
+                // ??
+            }
         }
     }
 
