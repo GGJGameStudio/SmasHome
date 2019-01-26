@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
     private Rigidbody2D rigidbody;
     private bool onFloor;
     private bool front;
@@ -15,6 +17,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         rigidbody = GetComponent<Rigidbody2D>();
         onFloor = true;
         front = true;
@@ -31,6 +35,24 @@ public class PlayerController : MonoBehaviour
         if (horizontal != 0)
         {
             transform.localPosition = transform.localPosition + new Vector3(horizontal * speed * Time.deltaTime, 0, 0);
+
+            if (this.onFloor)
+            {
+                animator.SetBool("Running", true);
+            }
+        }
+        else if (this.onFloor)
+        {
+            animator.SetBool("Running", false);
+        }
+
+        if (horizontal < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if (horizontal > 0)
+        {
+            spriteRenderer.flipX = false;
         }
 
         //Jump
@@ -38,6 +60,11 @@ public class PlayerController : MonoBehaviour
         {
             rigidbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
             onFloor = false;
+            animator.SetBool("Jumping", true);
+        }
+        else
+        {
+            animator.SetBool("Jumping", false);
         }
 
         //changement de plan
@@ -53,12 +80,13 @@ public class PlayerController : MonoBehaviour
                 front = true;
             }
         }
-        
+
         if (front)
         {
             gameObject.layer = LayerMask.NameToLayer("PlayerFront");
             gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "PlayerFront";
-        } else
+        }
+        else
         {
             gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "PlayerBack";
             gameObject.layer = LayerMask.NameToLayer("PlayerBack");
@@ -78,7 +106,8 @@ public class PlayerController : MonoBehaviour
                     grabbed.GetComponent<BoxCollider2D>().enabled = false;
                     grabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
                 }
-            } else
+            }
+            else
             {
                 grabbed.transform.parent = null;
                 grabbed.GetComponent<BoxCollider2D>().enabled = true;
@@ -88,7 +117,8 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (grabbed != null){
+        if (grabbed != null)
+        {
             grabbed.transform.localPosition = Vector3.zero;
         }
     }
@@ -98,6 +128,8 @@ public class PlayerController : MonoBehaviour
         if (collision2D.gameObject.tag == "Floor" || collision2D.gameObject.tag == "Player")
         {
             onFloor = true;
+            animator.SetBool("Jumping", false);
+            animator.SetBool("Landing", true);
         }
     }
 }
