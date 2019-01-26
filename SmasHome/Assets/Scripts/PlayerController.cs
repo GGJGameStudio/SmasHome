@@ -12,7 +12,8 @@ public class PlayerController : MonoBehaviour
     private bool rightdir;
     private GameObject grabbed;
     private float strikeTimer;
-    [SerializeField] private AudioSource damageAudio;
+    [SerializeField]
+    private AudioSource damageAudio;
 
 
     public int PlayerNumber;
@@ -66,7 +67,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Jump
-        if (Input.GetButton("Jump" + PlayerNumber) && onFloor)
+        if (Input.GetButtonDown("Jump" + PlayerNumber) && onFloor)
         {
             rigidbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
             onFloor = false;
@@ -75,6 +76,12 @@ public class PlayerController : MonoBehaviour
         else
         {
             animator.SetBool("Jumping", false);
+        }
+
+        
+        if (Input.GetButtonDown("Jump" + PlayerNumber))
+        {
+            //Debug.Log(onFloor);
         }
 
         //changement de plan
@@ -104,7 +111,7 @@ public class PlayerController : MonoBehaviour
 
         //grab
         var grab = gameObject.transform.Find("Grab").GetComponent<Grab>();
-        grab.transform.localPosition = new Vector3((rightdir?1:-1) * Mathf.Abs(grab.transform.localPosition.x), grab.transform.localPosition.y, grab.transform.localPosition.z);
+        grab.transform.localPosition = new Vector3((rightdir ? 1 : -1) * Mathf.Abs(grab.transform.localPosition.x), grab.transform.localPosition.y, grab.transform.localPosition.z);
 
         if (Input.GetButtonDown("Grab" + PlayerNumber) && strikeTimer < 0)
         {
@@ -148,7 +155,8 @@ public class PlayerController : MonoBehaviour
                 grabbed.GetComponent<BoxCollider2D>().isTrigger = true;
                 grabbed.GetComponent<ObjectBasic>().Striking = true;
                 strikeTimer = 0.5f;
-            } else
+            }
+            else
             {
                 // ??
             }
@@ -169,11 +177,12 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Jumping", false);
             animator.SetBool("Landing", true);
 
-            if(collision2D.gameObject.tag == "Player")
+            if (collision2D.gameObject.tag == "Player")
             {
                 damageAudio.Play();
             }
-        } else if (collision2D.gameObject.tag == "Object")
+        }
+        else if (collision2D.gameObject.tag == "Object")
         {
             var obj = collision2D.gameObject.GetComponent<ObjectBasic>();
             if (obj.Flying && obj.Owner != PlayerNumber)
@@ -181,7 +190,13 @@ public class PlayerController : MonoBehaviour
                 obj.GetComponent<ObjectBasic>().ThrowHit(gameObject);
             }
         }
-        
     }
 
+    void OnCollisionStay2D(Collision2D collision2D)
+    {
+        if (collision2D.gameObject.tag == "Floor" || collision2D.gameObject.tag == "Player")
+        {
+            onFloor = true;
+        }
+    }
 }
