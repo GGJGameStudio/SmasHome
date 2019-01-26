@@ -12,6 +12,12 @@ public class MainSceneBehaviour : MonoBehaviour
     private GameObject[] nbPlayersLabel;
     private int currentLabel;
     private bool lockHorizontal;
+    private bool outScene = false;
+
+    public bool GetOutScene()
+    {
+        return outScene;
+    }
 
     public GameObject CurrentNbPlayerLabelSelected
     {
@@ -40,8 +46,7 @@ public class MainSceneBehaviour : MonoBehaviour
         if (!pressStartLabel.activeSelf && (Input.GetButtonUp("Start1") || Input.GetButtonUp("Start2")))
         {
             Global.NbPlayers = int.Parse(CurrentNbPlayerLabelSelected.name.Substring(0, 1));
-
-            SceneManager.LoadScene(1);
+            StartCoroutine(ChangeScene());
             //var houseScene = SceneManager.GetSceneAt(1);
             //SceneManager.SetActiveScene(houseScene);
         }
@@ -52,6 +57,7 @@ public class MainSceneBehaviour : MonoBehaviour
             CurrentNbPlayerLabelSelected.SetActive(true);
 
             var axis = Input.GetAxis("Horizontal2");
+           
         }
 
         if (!pressStartLabel.activeSelf && !lockHorizontal && (Input.GetAxis("Horizontal1") > 0 || Input.GetAxis("Horizontal2") > 0))
@@ -59,7 +65,6 @@ public class MainSceneBehaviour : MonoBehaviour
             CurrentNbPlayerLabelSelected.SetActive(false);
             currentLabel = Mathf.Min(nbPlayersLabel.Length - 1, currentLabel + 1);
             CurrentNbPlayerLabelSelected.SetActive(true);
-
             lockHorizontal = true;
         }
 
@@ -76,5 +81,13 @@ public class MainSceneBehaviour : MonoBehaviour
         {
             lockHorizontal = false;
         }
+    }
+
+    private IEnumerator ChangeScene()
+    {
+        outScene = true;
+        yield return new WaitForSeconds(2.5f);
+
+        SceneManager.LoadScene(1);
     }
 }

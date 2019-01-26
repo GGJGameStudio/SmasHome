@@ -73,12 +73,12 @@ SpriteRenderer:
   m_SortingLayerID: -2091692555
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 78141f2b5bc761c439af7ed0c476154d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2e8b5590163462e45b6d4651c2e62a0e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.33142856, y: 0.38}
+  m_Size: {x: 0.81, y: 0.81}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -118,18 +118,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.054552197, y: -0.025002956}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0.5}
-    oldSize: {x: 0.33142856, y: 0.38}
-    newSize: {x: 0.33142856, y: 0.38}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.81, y: 0.81}
+    newSize: {x: 0.81, y: 0.81}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.37265015, y: 0.6863253}
   m_EdgeRadius: 0
 --- !u!114 &4048967559217272036
 MonoBehaviour:
@@ -146,8 +146,11 @@ MonoBehaviour:
   damageAudio: {fileID: 5886117020967738759, guid: 73625ec2fe41fdb4195182645e9e06c4,
     type: 3}
   jumpAudio: {fileID: 0}
+  CurrentPhase: 0
   PlayerNumber: 1
   Age: 0
+  Speed: 0
+  JumpForce: 0
 --- !u!95 &2038614384386887063
 Animator:
   serializedVersion: 3
