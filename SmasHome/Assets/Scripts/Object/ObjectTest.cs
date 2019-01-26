@@ -15,7 +15,7 @@ public class ObjectTest : ObjectBasic
 
     public override void Throw(bool rightdir, float throwtimer, float throwForceMultiplier)
     {
-        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2((rightdir ? 1 : -1) * 2 * throwtimer, 12 * throwtimer), ForceMode2D.Impulse);
+        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2((rightdir ? 1 : -1) * 2 * throwtimer * throwForceMultiplier, 12 * throwtimer * throwForceMultiplier), ForceMode2D.Impulse);
 
         gameObject.GetComponent<Rigidbody2D>().AddTorque(100 * throwtimer);
     }
