@@ -92,8 +92,8 @@
 				fixed4 c = SampleSpriteTexture (IN.texcoord) * IN.color;
 
 				/* Color from team's flag */
-				float colorMask = clamp((c.r + c.g + c.b) / 3.0, 0.0, 1.0);
-				colorMask = pow(colorMask, 10);
+				float colorMask = clamp((c.r + c.g + c.b) / 3.0, 0.0, 1.0); // Get greyscale value
+				colorMask = pow(colorMask, 10); // Decroissance rapide
 				fixed3 colorTeam = colorMask * _TeamColor.rgb + (1.0 - colorMask) * c.rgb;
 
 				/* Color from ghost */
