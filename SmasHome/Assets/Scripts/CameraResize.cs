@@ -7,12 +7,16 @@ public class CameraResize : MonoBehaviour
 {
     // Start is called before the first frame update
     private Camera mainCam;
-   
+
+    private float CamMinsize = 1;
+
 
     void Start()
     {
         mainCam = GetComponent<Camera>();
-        
+        CamMinsize = mainCam.orthographicSize;
+
+
     }
 
     // Update is called once per frame
@@ -61,17 +65,11 @@ public class CameraResize : MonoBehaviour
         Vector3 Diff = MaxBox - MinBox;
         Vector3 Middle = (MaxBox + MinBox) / 2; 
         float size = mainCam.orthographicSize;
-        if (Diff.x > size)
-        {
-             size = Diff.x;
-        }
-
-        if (Diff.y > size)
-        {
-            size = Diff.y;
-        }
-
         mainCam.orthographicSize = System.Math.Max(Diff.x,Diff.y)/2;
+        if(mainCam.orthographicSize < CamMinsize)
+        {
+            mainCam.orthographicSize = CamMinsize;
+        }
         mainCam.transform.position = new Vector3(Middle.x, Middle.y, mainCam.transform.position.z);
         
 
