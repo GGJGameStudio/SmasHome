@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private AudioSource jumpAudio;
 
+    public Object TombStonePrefab;
+
     public PlayerGender Gender;
 
     #region sprites
@@ -29,12 +31,12 @@ public class PlayerController : MonoBehaviour
     public Sprite GirlSprite;
     public Sprite TeenGirlSprite;
     public Sprite WomanSprite;
-    public Sprite OldLadySprite;
+    public Sprite GranySprite;
 
     public Sprite BoySprite;
     public Sprite TeenBoySprite;
     public Sprite ManSprite;
-    public Sprite OldManSprite;
+    public Sprite PapySprite;
 
     public Sprite GhostSprite;
 
@@ -47,12 +49,12 @@ public class PlayerController : MonoBehaviour
     public RuntimeAnimatorController GirlAnimator;
     public RuntimeAnimatorController TeenGirlAnimator;
     public RuntimeAnimatorController WomanAnimator;
-    public RuntimeAnimatorController OldLadyAnimator;
+    public RuntimeAnimatorController GranyAnimator;
            
     public RuntimeAnimatorController BoyAnimator;
     public RuntimeAnimatorController TeenBoyAnimator;
     public RuntimeAnimatorController ManAnimator;
-    public RuntimeAnimatorController OldManAnimator;
+    public RuntimeAnimatorController PapyAnimator;
            
     public RuntimeAnimatorController GhostAnimator;
 
@@ -75,7 +77,7 @@ public class PlayerController : MonoBehaviour
                     case PlayerPhase.ADULT:
                         return WomanAnimator;
                     case PlayerPhase.OLD:
-                        return OldLadyAnimator;
+                        return GranyAnimator;
                     case PlayerPhase.GHOST:
                         return GhostAnimator;
                 }
@@ -93,7 +95,7 @@ public class PlayerController : MonoBehaviour
                     case PlayerPhase.ADULT:
                         return ManAnimator;
                     case PlayerPhase.OLD:
-                        return OldManAnimator;
+                        return PapyAnimator;
                     case PlayerPhase.GHOST:
                         return GhostAnimator;
                 }
@@ -120,7 +122,7 @@ public class PlayerController : MonoBehaviour
                     case PlayerPhase.ADULT:
                         return WomanSprite;
                     case PlayerPhase.OLD:
-                        return OldLadySprite;
+                        return GranySprite;
                     case PlayerPhase.GHOST:
                         return GhostSprite;
                 }
@@ -138,7 +140,7 @@ public class PlayerController : MonoBehaviour
                     case PlayerPhase.ADULT:
                         return ManSprite;
                     case PlayerPhase.OLD:
-                        return OldManSprite;
+                        return PapySprite;
                     case PlayerPhase.GHOST:
                         return GhostSprite;
                 }
@@ -404,6 +406,11 @@ public class PlayerController : MonoBehaviour
 
         if (newphase != CurrentPhase)
         {
+            if(newphase == PlayerPhase.GHOST)
+            {
+                var tomb = Instantiate(TombStonePrefab, transform.position, Quaternion.identity) as GameObject;
+            }
+
             CurrentPhase = newphase;
             UpdatePlayerSprite();
         }
