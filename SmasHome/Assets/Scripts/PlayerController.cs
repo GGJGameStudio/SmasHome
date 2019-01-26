@@ -12,12 +12,16 @@ public class PlayerController : MonoBehaviour
     private bool rightdir;
     private GameObject grabbed;
     private float strikeTimer;
-    [SerializeField] private AudioSource damageAudio;
-    [SerializeField] private AudioSource jumpAudio;
+    [SerializeField]
+    private AudioSource damageAudio;
+    [SerializeField]
+    private AudioSource jumpAudio;
 
-
+    public PlayerPhase CurrentPhase;
     public int PlayerNumber;
     public float Age;
+    public float Speed;
+    public float JumpForce;
 
     // Start is called before the first frame update
     void Start()
@@ -31,19 +35,21 @@ public class PlayerController : MonoBehaviour
         rightdir = true;
         strikeTimer = 0f;
         Age = 0.5f;
+        CurrentPhase = PlayerPhase.BABY;
 
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        var speed = 3;
+        UpdatePlayerPhase();
+        UpdatePlayerSprite();
 
         //deplacement
         var horizontal = Input.GetAxis("Horizontal" + PlayerNumber);
         if (horizontal != 0)
         {
-            transform.localPosition = transform.localPosition + new Vector3(horizontal * speed * Time.deltaTime, 0, 0);
+            transform.localPosition = transform.localPosition + new Vector3(horizontal * Speed * Time.deltaTime, 0, 0);
 
             if (this.onFloor)
             {
@@ -67,9 +73,9 @@ public class PlayerController : MonoBehaviour
         }
 
         //Jump
-        if (Input.GetButtonDown("Jump" + PlayerNumber) && onFloor)
+        if (Input.GetButtonDown("Jump" + PlayerNumber) && onFloor && CurrentPhase > PlayerPhase.BABY)
         {
-            rigidbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
+            rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             onFloor = false;
             animator.SetBool("Jumping", true);
             jumpAudio.Play();
@@ -187,12 +193,73 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-        
+
     void OnCollisionStay2D(Collision2D collision2D)
     {
         if (collision2D.gameObject.tag == "Floor" || collision2D.gameObject.tag == "Player")
         {
             onFloor = true;
+        }
+    }
+
+    private void UpdatePlayerPhase()
+    {
+        if (Age < 3)
+        {
+            CurrentPhase = PlayerPhase.BABY;
+            Speed = 1;
+            JumpForce = 0;
+        }
+        else if (Age < 10)
+        {
+            CurrentPhase = PlayerPhase.CHILD;
+            Speed = 2;
+            JumpForce = 4;
+        }
+        else if (Age < 18)
+        {
+            CurrentPhase = PlayerPhase.TEEN;
+            Speed = 3;
+            JumpForce = 5;
+        }
+        else if (Age < 60)
+        {
+            CurrentPhase = PlayerPhase.ADULT;
+            Speed = 3;
+            JumpForce = 4;
+        }
+        else if (Age < 100)
+        {
+            CurrentPhase = PlayerPhase.OLD;
+            Speed = 2;
+            JumpForce = 3;
+        }
+        else
+        {
+            CurrentPhase = PlayerPhase.GHOST;
+            Speed = 2;
+        }
+    }
+
+    private void UpdatePlayerSprite()
+    {
+        //TODO
+        switch (CurrentPhase)
+        {
+            case PlayerPhase.BABY:
+                //spriteRenderer.sprite =
+                //animator = 
+                break;
+            case PlayerPhase.CHILD:
+                break;
+            case PlayerPhase.TEEN:
+                break;
+            case PlayerPhase.ADULT:
+                break;
+            case PlayerPhase.OLD:
+                break;
+            case PlayerPhase.GHOST:
+                break;
         }
     }
 }
