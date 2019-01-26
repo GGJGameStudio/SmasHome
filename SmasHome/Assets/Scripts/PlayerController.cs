@@ -236,25 +236,25 @@ public class PlayerController : MonoBehaviour
         {
             CurrentPhase = PlayerPhase.CHILD;
             Speed = 2;
-            JumpForce = 4;
+            JumpForce = 6;
         }
         else if (Age < 18)
         {
             CurrentPhase = PlayerPhase.TEEN;
             Speed = 3;
-            JumpForce = 5;
+            JumpForce = 8;
         }
         else if (Age < 60)
         {
             CurrentPhase = PlayerPhase.ADULT;
             Speed = 3;
-            JumpForce = 4;
+            JumpForce = 8;
         }
         else if (Age < 100)
         {
             CurrentPhase = PlayerPhase.OLD;
             Speed = 2;
-            JumpForce = 3;
+            JumpForce = 6;
         }
         else
         {
