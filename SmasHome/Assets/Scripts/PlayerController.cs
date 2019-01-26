@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     public float Age;
     public float Speed;
     public float JumpForce;
+    public float ThrowForce;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
         CurrentPhase = PlayerPhase.BABY;
         throwTimer = 0f;
         throwing = false;
+        ThrowForce = 1f;
 
     }
 
@@ -133,7 +135,7 @@ public class PlayerController : MonoBehaviour
                 grabbed.GetComponent<BoxCollider2D>().enabled = true;
                 grabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 grabbed.layer = LayerMask.NameToLayer("Object");
-                grabbed.GetComponent<ObjectBasic>().Throw(rightdir, throwTimer);
+                grabbed.GetComponent<ObjectBasic>().Throw(rightdir, throwTimer, ThrowForce);
                 grabbed.GetComponent<ObjectBasic>().Flying = true;
                 Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), grabbed.GetComponent<Collider2D>(), true);
                 StartCoroutine(EnableCollision(gameObject.GetComponent<BoxCollider2D>(), grabbed.GetComponent<Collider2D>()));
@@ -233,35 +235,41 @@ public class PlayerController : MonoBehaviour
             CurrentPhase = PlayerPhase.BABY;
             Speed = 1;
             JumpForce = 0;
+            ThrowForce = 0.5f;
         }
         else if (Age < 10)
         {
             CurrentPhase = PlayerPhase.CHILD;
             Speed = 2;
-            JumpForce = 4;
+            JumpForce = 6;
+            ThrowForce = 0.8f;
         }
         else if (Age < 18)
         {
             CurrentPhase = PlayerPhase.TEEN;
             Speed = 3;
-            JumpForce = 5;
+            JumpForce = 8;
+            ThrowForce = 1f;
         }
         else if (Age < 60)
         {
             CurrentPhase = PlayerPhase.ADULT;
             Speed = 3;
-            JumpForce = 4;
+            JumpForce = 8;
+            ThrowForce = 1.2f;
         }
         else if (Age < 100)
         {
             CurrentPhase = PlayerPhase.OLD;
             Speed = 2;
-            JumpForce = 3;
+            JumpForce = 6;
+            ThrowForce = 1f;
         }
         else
         {
             CurrentPhase = PlayerPhase.GHOST;
             Speed = 2;
+            ThrowForce = 0f;
         }
     }
 
