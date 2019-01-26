@@ -102,10 +102,12 @@ public class PlayerController : MonoBehaviour
             if (vertical > 0.9)
             {
                 front = false;
+                this.GetComponent<SpriteRenderer>().material.SetFloat("_IsBackground", 1.0f);
             }
             if (vertical < -0.9)
             {
                 front = true;
+                this.GetComponent<SpriteRenderer>().material.SetFloat("_IsBackground", 0.0f);
             }
         }
 
