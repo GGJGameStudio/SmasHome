@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5613108978040164954}
   - component: {fileID: 6027433782191627857}
   - component: {fileID: 8437945398143199065}
-  m_Layer: 13
+  m_Layer: 11
   m_Name: Furniture1
   m_TagString: Object
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9025355110406244309}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

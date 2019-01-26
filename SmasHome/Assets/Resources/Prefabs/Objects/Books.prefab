@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1172308575649666694}
   - component: {fileID: 7241461757623335918}
   - component: {fileID: 3658853953242068656}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: Books
   m_TagString: Object
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8964896754248520991}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
