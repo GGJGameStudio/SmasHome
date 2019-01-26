@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private Animator animator;
+    private SpriteRenderer spriteRenderer;
     private Rigidbody2D rigidbody;
     private bool onFloor;
 
@@ -12,6 +14,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         rigidbody = GetComponent<Rigidbody2D>();
         onFloor = true;
     }
@@ -24,12 +28,36 @@ public class PlayerController : MonoBehaviour
         if (horizontal != 0)
         {
             transform.localPosition = transform.localPosition + new Vector3(horizontal * speed * Time.deltaTime, 0, 0);
+
+            if (this.onFloor)
+            {
+                animator.SetBool("Running", true);
+            }
+        }
+        else if (this.onFloor)
+        {
+            animator.SetBool("Running", false);
+        }
+
+        if (horizontal < 0)
+        {
+            spriteRenderer.flipX = true;
+        }
+        else if (horizontal > 0)
+        {
+            spriteRenderer.flipX = false;
         }
 
         if (Input.GetButtonDown("Jump" + PlayerNumber) && onFloor)
         {
             rigidbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
             onFloor = false;
+
+            animator.SetBool("Jumping", true);
+        }
+        else
+        {
+            animator.SetBool("Jumping", false);
         }
     }
 
@@ -38,6 +66,8 @@ public class PlayerController : MonoBehaviour
         if (collision2D.gameObject.tag == "Floor" || collision2D.gameObject.tag == "Player")
         {
             onFloor = true;
+            animator.SetBool("Jumping", false);
+            animator.SetBool("Landing", true);
         }
     }
 }
