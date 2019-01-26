@@ -95,7 +95,6 @@
 
 				/* Color from team's flag */
 				float diff = (abs (c.r - _TeamColorBase.r) + abs (c.g - _TeamColorBase.g) + abs (c.b - _TeamColorBase.b));
-				
 				float colorMask = pow(diff, 2);
 				colorMask = 1.0 - clamp(colorMask, 0.0, 1.0);
 				//float colorMask = clamp((c.r + c.g + c.b) / 3.0, 0.0, 1.0); // Get greyscale value
