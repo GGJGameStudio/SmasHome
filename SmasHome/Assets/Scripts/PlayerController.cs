@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private bool rightdir;
     private GameObject grabbed;
     private float strikeTimer;
+    [SerializeField] private AudioSource damageAudio;
 
 
     public int PlayerNumber;
@@ -167,6 +168,11 @@ public class PlayerController : MonoBehaviour
             onFloor = true;
             animator.SetBool("Jumping", false);
             animator.SetBool("Landing", true);
+
+            if(collision2D.gameObject.tag == "Player")
+            {
+                damageAudio.Play();
+            }
         } else if (collision2D.gameObject.tag == "Object")
         {
             var obj = collision2D.gameObject.GetComponent<ObjectBasic>();
@@ -177,4 +183,5 @@ public class PlayerController : MonoBehaviour
         }
         
     }
+
 }
