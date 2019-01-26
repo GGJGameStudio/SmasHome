@@ -12,7 +12,7 @@ public class ObjectTest : ObjectBasic
         bubblePrefab = Resources.Load("Prefabs/Bubble");
     }
 
-    public override void Throw(bool rightdir, float throwtimer)
+    public override void Throw(bool rightdir, float throwtimer, float throwForceMultiplier)
     {
         gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2((rightdir ? 1 : -1) * 2 * throwtimer, 12 * throwtimer), ForceMode2D.Impulse);
 

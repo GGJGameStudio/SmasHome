@@ -29,9 +29,9 @@ public class ObjectBasic : MonoBehaviour
         }
     }
 
-    public virtual void Throw(bool rightdir, float throwtimer)
+    public virtual void Throw(bool rightdir, float throwtimer, float throwForceMultiplier)
     {
-        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2((rightdir ? 1 : -1) * 20 * throwtimer, 2 * throwtimer), ForceMode2D.Impulse);
+        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2((rightdir ? 1 : -1) * 20 * throwtimer * throwForceMultiplier, 2 * throwtimer * throwForceMultiplier), ForceMode2D.Impulse);
     }
 
     public virtual void Strike(bool rightdir)
