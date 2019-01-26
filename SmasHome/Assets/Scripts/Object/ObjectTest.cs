@@ -24,13 +24,5 @@ public class ObjectTest : ObjectBasic
         gameObject.GetComponent<Rigidbody2D>().AddTorque(100);
     }
 
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        col.gameObject.GetComponent<Grab>().CanGrab.Add(gameObject);
-    }
-
-    void OnTriggerExit2D(Collider2D col)
-    {
-        col.gameObject.GetComponent<Grab>().CanGrab.Remove(gameObject);
-    }
+    
 }
