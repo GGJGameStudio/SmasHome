@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private GameObject grabbed;
     private float strikeTimer;
     [SerializeField] private AudioSource damageAudio;
+    [SerializeField] private AudioSource jumpAudio;
 
 
     public int PlayerNumber;
@@ -71,6 +72,7 @@ public class PlayerController : MonoBehaviour
             rigidbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
             onFloor = false;
             animator.SetBool("Jumping", true);
+            jumpAudio.Play();
         }
         else
         {

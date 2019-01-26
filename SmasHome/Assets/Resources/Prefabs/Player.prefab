@@ -143,31 +143,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f089260c4c51fe4a9e328224ed90cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerNumber: 0
-  Age:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.06898275
-      value: 1.1060262
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  damageAudio: {fileID: 5886117020967738759, guid: 73625ec2fe41fdb4195182645e9e06c4,
+    type: 3}
+  jumpAudio: {fileID: 0}
+  PlayerNumber: 1
+  Age: 0
 --- !u!95 &2038614384386887063
 Animator:
   serializedVersion: 3
