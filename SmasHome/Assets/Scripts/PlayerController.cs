@@ -20,6 +20,134 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private AudioSource jumpAudio;
 
+    public PlayerGender Gender;
+
+    #region sprites
+
+    public Sprite BabySprite;
+
+    public Sprite GirlSprite;
+    public Sprite TeenGirlSprite;
+    public Sprite WomanSprite;
+    public Sprite OldLadySprite;
+
+    public Sprite BoySprite;
+    public Sprite TeenBoySprite;
+    public Sprite ManSprite;
+    public Sprite OldManSprite;
+
+    public Sprite GhostSprite;
+
+    #endregion
+
+    #region animators
+
+    public RuntimeAnimatorController BabyAnimator;
+           
+    public RuntimeAnimatorController GirlAnimator;
+    public RuntimeAnimatorController TeenGirlAnimator;
+    public RuntimeAnimatorController WomanAnimator;
+    public RuntimeAnimatorController OldLadyAnimator;
+           
+    public RuntimeAnimatorController BoyAnimator;
+    public RuntimeAnimatorController TeenBoyAnimator;
+    public RuntimeAnimatorController ManAnimator;
+    public RuntimeAnimatorController OldManAnimator;
+           
+    public RuntimeAnimatorController GhostAnimator;
+
+    #endregion
+
+    private RuntimeAnimatorController CurrentPhaseAnimator
+    {
+        get
+        {
+            if (Gender == PlayerGender.Female)
+            {
+                switch (CurrentPhase)
+                {
+                    case PlayerPhase.BABY:
+                        return BabyAnimator;
+                    case PlayerPhase.CHILD:
+                        return GirlAnimator;
+                    case PlayerPhase.TEEN:
+                        return TeenGirlAnimator;
+                    case PlayerPhase.ADULT:
+                        return WomanAnimator;
+                    case PlayerPhase.OLD:
+                        return OldLadyAnimator;
+                    case PlayerPhase.GHOST:
+                        return GhostAnimator;
+                }
+            }
+            else
+            {
+                switch (CurrentPhase)
+                {
+                    case PlayerPhase.BABY:
+                        return BabyAnimator;
+                    case PlayerPhase.CHILD:
+                        return BoyAnimator;
+                    case PlayerPhase.TEEN:
+                        return TeenBoyAnimator;
+                    case PlayerPhase.ADULT:
+                        return ManAnimator;
+                    case PlayerPhase.OLD:
+                        return OldManAnimator;
+                    case PlayerPhase.GHOST:
+                        return GhostAnimator;
+                }
+            }
+
+            return null;
+        }
+    }
+
+    private Sprite CurrentPhaseSprite
+    {
+        get
+        {
+            if (Gender == PlayerGender.Female)
+            {
+                switch (CurrentPhase)
+                {
+                    case PlayerPhase.BABY:
+                        return BabySprite;
+                    case PlayerPhase.CHILD:
+                        return GirlSprite;
+                    case PlayerPhase.TEEN:
+                        return TeenGirlSprite;
+                    case PlayerPhase.ADULT:
+                        return WomanSprite;
+                    case PlayerPhase.OLD:
+                        return OldLadySprite;
+                    case PlayerPhase.GHOST:
+                        return GhostSprite;
+                }
+            }
+            else
+            {
+                switch (CurrentPhase)
+                {
+                    case PlayerPhase.BABY:
+                        return BabySprite;
+                    case PlayerPhase.CHILD:
+                        return BoySprite;
+                    case PlayerPhase.TEEN:
+                        return TeenBoySprite;
+                    case PlayerPhase.ADULT:
+                        return ManSprite;
+                    case PlayerPhase.OLD:
+                        return OldManSprite;
+                    case PlayerPhase.GHOST:
+                        return GhostSprite;
+                }
+            }
+
+            return null;
+        }
+    }
+
     public PlayerPhase CurrentPhase;
     public int PlayerNumber;
     public float Age;
@@ -38,12 +166,11 @@ public class PlayerController : MonoBehaviour
         grabbed = null;
         rightdir = true;
         strikeTimer = 0f;
-        Age = 8f;
+        Age = 0.1f;
         CurrentPhase = PlayerPhase.BABY;
         throwTimer = 0f;
         throwing = false;
         ThrowForce = 1f;
-
     }
 
     // Update is called once per frame
@@ -77,8 +204,6 @@ public class PlayerController : MonoBehaviour
             spriteRenderer.flipX = false;
             rightdir = true;
         }
-
-        
 
         //Jump
         if (Input.GetButtonDown("Jump" + PlayerNumber) && onFloor && CurrentPhase > PlayerPhase.BABY)
@@ -284,26 +409,9 @@ public class PlayerController : MonoBehaviour
 
     private void UpdatePlayerSprite()
     {
-        //TODO
-        switch (CurrentPhase)
-        {
-            case PlayerPhase.BABY:
-                //spriteRenderer.sprite =
-                //animator = 
-                break;
-            case PlayerPhase.CHILD:
-                break;
-            case PlayerPhase.TEEN:
-                break;
-            case PlayerPhase.ADULT:
-                break;
-            case PlayerPhase.OLD:
-                break;
-            case PlayerPhase.GHOST:
-                break;
-        }
+        animator.runtimeAnimatorController = CurrentPhaseAnimator;
+        spriteRenderer.sprite = CurrentPhaseSprite;
     }
-
 
     private IEnumerator EnableCollision(Collider2D collider1, Collider2D collider2)
     {

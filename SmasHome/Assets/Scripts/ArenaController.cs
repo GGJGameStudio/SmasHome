@@ -7,11 +7,12 @@ public class ArenaController : MonoBehaviour
 {
 
     public PlayerPhase ArenaPhase { get; set; }
+    public float TimeScale = 0.01f;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        ArenaPhase = PlayerPhase.BABY;
     }
 
     // Update is called once per frame
@@ -22,7 +23,14 @@ public class ArenaController : MonoBehaviour
         if (newArenaPhase != ArenaPhase)
         {
             ArenaPhase = newArenaPhase;
-            //TODO transition
+            NewPhaseTransition();
+        }
+
+        //time
+        var players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject player in players)
+        {
+            player.GetComponent<PlayerController>().Age += Time.deltaTime * TimeScale;
         }
     }
 
@@ -41,5 +49,14 @@ public class ArenaController : MonoBehaviour
             }
         }
         return maxPhase;
+    }
+
+    private void NewPhaseTransition()
+    {
+        var objects = GameObject.FindGameObjectsWithTag("Object");
+        foreach (GameObject obj in objects)
+        {
+            obj.GetComponent<ObjectBasic>().Reset();
+        }
     }
 }
