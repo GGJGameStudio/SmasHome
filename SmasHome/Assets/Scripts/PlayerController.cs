@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigidbody = GetComponent<Rigidbody2D>();
         onFloor = true;
-        front = true;
+        front = false;
         grabbed = null;
         rightdir = true;
         strikeTimer = 0f;
