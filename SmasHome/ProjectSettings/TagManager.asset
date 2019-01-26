@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Floor
   - Object
+  - Grab
+  - Canvas
   layers:
   - Default
   - TransparentFX
