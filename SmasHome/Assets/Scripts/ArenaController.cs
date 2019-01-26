@@ -89,6 +89,6 @@ public class ArenaController : MonoBehaviour
     private void Win(GameObject winner)
     {
         //TODO
-        Debug.Log(winner.GetComponent<PlayerController>().PlayerNumber);
+        //Debug.Log(winner.GetComponent<PlayerController>().PlayerNumber);
     }
 }

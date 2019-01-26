@@ -206,7 +206,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Jump
-        if (Input.GetButtonDown("Jump" + PlayerNumber) && onFloor && CurrentPhase > PlayerPhase.BABY)
+        if (Input.GetButtonDown("Jump" + PlayerNumber) && (onFloor || CurrentPhase == PlayerPhase.GHOST) && CurrentPhase > PlayerPhase.BABY)
         {
             //Debug.Log("jump");
             rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
@@ -397,7 +397,9 @@ public class PlayerController : MonoBehaviour
         {
             newphase = PlayerPhase.GHOST;
             Speed = 2;
+            JumpForce = 0.2f;
             ThrowForce = 0f;
+            rigidbody.gravityScale = 0.1f;
         }
 
         if (newphase != CurrentPhase)
