@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Jump
-        if (Input.GetButtonDown("Jump" + PlayerNumber) && onFloor)
+        if (Input.GetButton("Jump" + PlayerNumber) && onFloor)
         {
             rigidbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
             onFloor = false;
@@ -139,7 +139,7 @@ public class PlayerController : MonoBehaviour
 
         //strike
         strikeTimer -= Time.deltaTime;
-        if (Input.GetButtonDown("Strike" + PlayerNumber) && strikeTimer < 0)
+        if (Input.GetButton("Strike" + PlayerNumber) && strikeTimer < 0)
         {
             if (grabbed != null)
             {
