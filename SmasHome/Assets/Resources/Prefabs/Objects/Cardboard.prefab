@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5232856715345147709}
   - component: {fileID: 8932394512888051051}
   - component: {fileID: 8091973109690704960}
-  m_Layer: 13
+  m_Layer: 11
   m_Name: Cardboard
   m_TagString: Object
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8402854217266735717}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

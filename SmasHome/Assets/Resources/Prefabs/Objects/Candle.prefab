@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8660919809879012105}
   - component: {fileID: 8914837350604687548}
   - component: {fileID: 2292329567643285075}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: Candle
   m_TagString: Object
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6562570306609286435}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

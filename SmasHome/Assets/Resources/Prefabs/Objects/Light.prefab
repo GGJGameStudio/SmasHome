@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7175174620842207365}
   - component: {fileID: 7548937914711100220}
   - component: {fileID: 7819744238289691745}
-  m_Layer: 13
+  m_Layer: 16
   m_Name: Light
   m_TagString: Object
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5383891999212422092}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

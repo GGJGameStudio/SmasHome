@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6818224578766687049}
   - component: {fileID: 7470744410797480269}
   - component: {fileID: 1905220541931667577}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: Bottle
   m_TagString: Object
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6316474205716959086}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6961626374273794080}
   - component: {fileID: 2301001500721014694}
   - component: {fileID: 8347111753879846448}
-  m_Layer: 13
+  m_Layer: 16
   m_Name: BedTable2
   m_TagString: Object
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 245391563745050860}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

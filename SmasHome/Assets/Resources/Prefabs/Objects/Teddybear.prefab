@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 993143645746652330}
   - component: {fileID: 3178496544014961590}
   - component: {fileID: 9115804771685133418}
-  m_Layer: 13
+  m_Layer: 14
   m_Name: Teddybear
   m_TagString: Object
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1403750588090484099}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

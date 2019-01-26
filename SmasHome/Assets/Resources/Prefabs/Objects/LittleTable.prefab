@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6603439039645742583}
   - component: {fileID: 2525583759061901444}
   - component: {fileID: 3892362689852387247}
-  m_Layer: 13
+  m_Layer: 11
   m_Name: LittleTable
   m_TagString: Object
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4127825364223813868}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

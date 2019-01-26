@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6004200973741868753}
   - component: {fileID: 5515743081048296103}
   - component: {fileID: 39929745451697130}
-  m_Layer: 13
+  m_Layer: 11
   m_Name: Chair
   m_TagString: Object
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8397004498205226382}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
