@@ -22,16 +22,16 @@ public class ObjectBasic : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (Flying && gameObject.GetComponent<Rigidbody2D>().velocity.magnitude < 1)
+        if (Flying && gameObject.GetComponent<Rigidbody2D>().velocity.magnitude < 1 && gameObject.GetComponent<Rigidbody2D>().angularVelocity < 1)
         {
             Flying = false;
             Owner = -1;
         }
     }
 
-    public virtual void Throw(bool rightdir)
+    public virtual void Throw(bool rightdir, float throwtimer)
     {
-        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2((rightdir ? 1 : -1) * 10, 2), ForceMode2D.Impulse);
+        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2((rightdir ? 1 : -1) * 20 * throwtimer, 2 * throwtimer), ForceMode2D.Impulse);
     }
 
     public virtual void Strike(bool rightdir)

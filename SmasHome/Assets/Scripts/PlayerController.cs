@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     private bool rightdir;
     private GameObject grabbed;
     private float strikeTimer;
+    private float throwTimer;
+    private bool throwing;
     [SerializeField]
     private AudioSource damageAudio;
     [SerializeField]
@@ -34,8 +36,10 @@ public class PlayerController : MonoBehaviour
         grabbed = null;
         rightdir = true;
         strikeTimer = 0f;
-        Age = 0.5f;
+        Age = 8f;
         CurrentPhase = PlayerPhase.BABY;
+        throwTimer = 0f;
+        throwing = false;
 
     }
 
@@ -49,7 +53,7 @@ public class PlayerController : MonoBehaviour
         var horizontal = Input.GetAxis("Horizontal" + PlayerNumber);
         if (horizontal != 0)
         {
-            transform.localPosition = transform.localPosition + new Vector3(horizontal * Speed * Time.deltaTime, 0, 0);
+            transform.localPosition = transform.localPosition + new Vector3(horizontal * Speed * Time.fixedDeltaTime, 0, 0);
 
             if (this.onFloor)
             {
@@ -113,6 +117,24 @@ public class PlayerController : MonoBehaviour
         //grab
         var grab = gameObject.transform.Find("Grab").GetComponent<Grab>();
         grab.transform.localPosition = new Vector3((rightdir ? 1 : -1) * Mathf.Abs(grab.transform.localPosition.x), grab.transform.localPosition.y, grab.transform.localPosition.z);
+        
+
+        if (Input.GetButtonUp("Grab" + PlayerNumber) && throwing)
+        {
+            if (grabbed != null)
+            {
+                grabbed.transform.parent = null;
+                grabbed.GetComponent<BoxCollider2D>().enabled = true;
+                grabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                grabbed.layer = LayerMask.NameToLayer("Object");
+                grabbed.GetComponent<ObjectBasic>().Throw(rightdir, throwTimer);
+                grabbed.GetComponent<ObjectBasic>().Flying = true;
+                Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), grabbed.GetComponent<Collider2D>(), true);
+                StartCoroutine(EnableCollision(gameObject.GetComponent<BoxCollider2D>(), grabbed.GetComponent<Collider2D>()));
+                grabbed = null;
+                throwing = false;
+            }
+        }
 
         if (Input.GetButtonDown("Grab" + PlayerNumber) && strikeTimer < 0)
         {
@@ -130,13 +152,17 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                grabbed.transform.parent = null;
-                grabbed.GetComponent<BoxCollider2D>().enabled = true;
-                grabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-                grabbed.layer = LayerMask.NameToLayer("Object");
-                grabbed.GetComponent<ObjectBasic>().Throw(rightdir);
-                grabbed.GetComponent<ObjectBasic>().Flying = true;
-                grabbed = null;
+                throwTimer = 0f;
+                throwing = true;
+            }
+        }
+
+        if (throwing)
+        {
+            throwTimer += Time.fixedDeltaTime;
+            if (throwTimer > 0.5f)
+            {
+                throwTimer = 0.5f;
             }
         }
 
@@ -147,7 +173,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //strike
-        strikeTimer -= Time.deltaTime;
+        strikeTimer -= Time.fixedDeltaTime;
         if (Input.GetButton("Strike" + PlayerNumber) && strikeTimer < 0)
         {
             if (grabbed != null)
@@ -187,7 +213,8 @@ public class PlayerController : MonoBehaviour
         else if (collision2D.gameObject.tag == "Object")
         {
             var obj = collision2D.gameObject.GetComponent<ObjectBasic>();
-            if (obj.Flying && obj.Owner != PlayerNumber)
+            
+            if (obj.Flying)
             {
                 obj.GetComponent<ObjectBasic>().ThrowHit(gameObject);
             }
@@ -261,5 +288,11 @@ public class PlayerController : MonoBehaviour
             case PlayerPhase.GHOST:
                 break;
         }
+    }
+
+    private IEnumerator EnableCollision(Collider2D collider1, Collider2D collider2)
+    {
+        yield return new WaitForSeconds(1f);
+        Physics2D.IgnoreCollision(collider1, collider2, false);
     }
 }
