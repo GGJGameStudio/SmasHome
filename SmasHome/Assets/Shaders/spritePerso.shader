@@ -7,7 +7,9 @@
 		[MaterialToggle] PixelSnap ("Pixel snap", Float) = 0
 
 		_TeamColor ("Team color", Color) = (0.5, 0.5, 0.5, 1)
+		_GhostColor ("Ghost color", Color) = (0.5, 0.5, 0.5, 1)
 		[Toggle] _IsBackground("Is background", Float) = 0
+		[Toggle] _IsGhost("Is ghost", Float) = 0
 	}
 
 	SubShader
@@ -68,7 +70,9 @@
 			float _AlphaSplitEnabled;
 
 			fixed4 _TeamColor;
+			fixed4 _GhostColor;
 			float _IsBackground;
+			float _IsGhost;
 
 			fixed4 SampleSpriteTexture (float2 uv)
 			{
@@ -84,17 +88,25 @@
 
 			fixed4 frag(v2f IN) : SV_Target
 			{
+				/* Color from texture */
 				fixed4 c = SampleSpriteTexture (IN.texcoord) * IN.color;
 
+				/* Color from team's flag */
 				float colorMask = clamp((c.r + c.g + c.b) / 3.0, 0.0, 1.0);
 				colorMask = pow(colorMask, 10);
 				fixed3 colorTeam = colorMask * _TeamColor.rgb + (1.0 - colorMask) * c.rgb;
 
+				/* Color from ghost */
+				float greyScale = clamp((c.r + c.g + c.b) / 3.0, 0.0, 1.0);
+				fixed3 colorGhost;
+				colorGhost.rgb = greyScale;
+				colorTeam = (1.0 - _IsGhost) * colorTeam + _IsGhost * (colorMask * _TeamColor.rgb + colorGhost * _GhostColor.rgb); // Color
+				c.a = (1.0 - _IsGhost) * c.a + _IsGhost * c.a * 0.5 * (0.75 + _SinTime.w / 4.0); // Alpha
+
+				/* Color from background */
 				fixed3 backgroundColor = _IsBackground * 0.7 * colorTeam.rgb + (1.0 - _IsBackground) * colorTeam.rgb;
 
-				/*c.r = colorMask;
-				c.g = colorMask;
-				c.b = colorMask;*/
+				//c.rgb = colorMask;
 				c.rgb = backgroundColor;
 				c.rgb *= c.a;
 				return c;
