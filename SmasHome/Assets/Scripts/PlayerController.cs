@@ -79,12 +79,6 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("Jumping", false);
         }
 
-        
-        if (Input.GetButtonDown("Jump" + PlayerNumber))
-        {
-            //Debug.Log(onFloor);
-        }
-
         //changement de plan
         var vertical = Input.GetAxis("Vertical" + PlayerNumber);
         if (vertical != 0)
@@ -133,6 +127,7 @@ public class PlayerController : MonoBehaviour
                 grabbed.transform.parent = null;
                 grabbed.GetComponent<BoxCollider2D>().enabled = true;
                 grabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                grabbed.layer = LayerMask.NameToLayer("Object");
                 grabbed.GetComponent<ObjectBasic>().Throw(rightdir);
                 grabbed.GetComponent<ObjectBasic>().Flying = true;
                 grabbed = null;
