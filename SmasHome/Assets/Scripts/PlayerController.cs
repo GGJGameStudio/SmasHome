@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -49,7 +50,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         UpdatePlayerPhase();
-        UpdatePlayerSprite();
 
         //deplacement
         var horizontal = Input.GetAxis("Horizontal" + PlayerNumber);
@@ -228,46 +228,55 @@ public class PlayerController : MonoBehaviour
 
     private void UpdatePlayerPhase()
     {
+        PlayerPhase newphase;
+
         if (Age < 3)
         {
-            CurrentPhase = PlayerPhase.BABY;
+            newphase = PlayerPhase.BABY;
+            CurrentPhase = newphase;
             Speed = 1;
             JumpForce = 0;
             ThrowForce = 0.5f;
         }
         else if (Age < 10)
         {
-            CurrentPhase = PlayerPhase.CHILD;
+            newphase = PlayerPhase.CHILD;
             Speed = 2;
             JumpForce = 6;
             ThrowForce = 0.8f;
         }
         else if (Age < 18)
         {
-            CurrentPhase = PlayerPhase.TEEN;
+            newphase = PlayerPhase.TEEN;
             Speed = 3;
             JumpForce = 8;
             ThrowForce = 1f;
         }
         else if (Age < 60)
         {
-            CurrentPhase = PlayerPhase.ADULT;
+            newphase = PlayerPhase.ADULT;
             Speed = 3;
             JumpForce = 8;
             ThrowForce = 1.2f;
         }
         else if (Age < 100)
         {
-            CurrentPhase = PlayerPhase.OLD;
+            newphase = PlayerPhase.OLD;
             Speed = 2;
             JumpForce = 6;
             ThrowForce = 1f;
         }
         else
         {
-            CurrentPhase = PlayerPhase.GHOST;
+            newphase = PlayerPhase.GHOST;
             Speed = 2;
             ThrowForce = 0f;
+        }
+
+        if (newphase != CurrentPhase)
+        {
+            CurrentPhase = newphase;
+            UpdatePlayerSprite();
         }
     }
 
@@ -292,6 +301,7 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
+
 
     private IEnumerator EnableCollision(Collider2D collider1, Collider2D collider2)
     {

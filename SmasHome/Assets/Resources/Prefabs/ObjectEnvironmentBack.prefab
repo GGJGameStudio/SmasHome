@@ -144,3 +144,6 @@ MonoBehaviour:
   Owner: 0
   Flying: 0
   Striking: 0
+  ThrowDamage: 1
+  StrikeDamage: 2
+  Available: 0000000001000000020000000300000004000000
