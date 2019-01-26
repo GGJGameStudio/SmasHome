@@ -8,6 +8,7 @@ TagManager:
   - Object
   - Grab
   - Canvas
+  - Arena
   layers:
   - Default
   - TransparentFX

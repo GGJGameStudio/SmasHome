@@ -21,7 +21,7 @@ public class ObjectBasic : MonoBehaviour
     private GameObject arena;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         Owner = -1;
         Flying = false;

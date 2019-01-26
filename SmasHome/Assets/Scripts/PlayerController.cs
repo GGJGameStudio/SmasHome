@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
         grabbed = null;
         rightdir = true;
         strikeTimer = 0f;
-        Age = 8f;
+        Age = 0.1f;
         CurrentPhase = PlayerPhase.BABY;
         throwTimer = 0f;
         throwing = false;
