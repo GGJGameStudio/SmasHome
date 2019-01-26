@@ -6,7 +6,8 @@
 		_Color ("Tint", Color) = (1,1,1,1)
 		[MaterialToggle] PixelSnap ("Pixel snap", Float) = 0
 
-		_TeamColor ("Team color", Color) = (0.5, 0.5, 0.5, 1)
+		_TeamColor ("Team color", Color) = (0.5, 0.98, 0.5, 1)
+		_TeamColorBase ("Team color base", Color) = (1, 1, 0.412, 1)
 		_GhostColor ("Ghost color", Color) = (0.5, 0.5, 0.5, 1)
 		[Toggle] _IsBackground("Is background", Float) = 0
 		[Toggle] _IsGhost("Is ghost", Float) = 0
@@ -70,6 +71,7 @@
 			float _AlphaSplitEnabled;
 
 			fixed4 _TeamColor;
+			fixed4 _TeamColorBase;
 			fixed4 _GhostColor;
 			float _IsBackground;
 			float _IsGhost;
@@ -92,8 +94,12 @@
 				fixed4 c = SampleSpriteTexture (IN.texcoord) * IN.color;
 
 				/* Color from team's flag */
-				float colorMask = clamp((c.r + c.g + c.b) / 3.0, 0.0, 1.0); // Get greyscale value
-				colorMask = pow(colorMask, 10); // Decroissance rapide
+				float diff = (abs (c.r - _TeamColorBase.r) + abs (c.g - _TeamColorBase.g) + abs (c.b - _TeamColorBase.b));
+				
+				float colorMask = pow(diff, 2);
+				colorMask = 1.0 - clamp(colorMask, 0.0, 1.0);
+				//float colorMask = clamp((c.r + c.g + c.b) / 3.0, 0.0, 1.0); // Get greyscale value
+				//colorMask = pow(colorMask, 10); // Decroissance rapide
 				fixed3 colorTeam = colorMask * _TeamColor.rgb + (1.0 - colorMask) * c.rgb;
 
 				/* Color from ghost */

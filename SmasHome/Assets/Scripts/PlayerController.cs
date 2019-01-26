@@ -224,14 +224,6 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnCollisionStay2D(Collision2D collision2D)
-    {
-        if (collision2D.gameObject.tag == "Floor" || collision2D.gameObject.tag == "Player")
-        {
-            onFloor = true;
-        }
-    }
-
     private void UpdatePlayerPhase()
     {
         if (Age < 3)
