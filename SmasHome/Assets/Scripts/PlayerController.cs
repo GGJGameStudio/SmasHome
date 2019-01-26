@@ -206,7 +206,7 @@ public class PlayerController : MonoBehaviour
         if (collision2D.gameObject.tag == "Floor" || collision2D.gameObject.tag == "Player")
         {
             onFloor = true;
-            animator.SetBool("Jumping", false);
+            animator.SetBool("Falling", false);
 
             if (collision2D.gameObject.tag == "Player")
             {
