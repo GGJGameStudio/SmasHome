@@ -21,7 +21,7 @@ public class ObjectBasic : MonoBehaviour
     private GameObject arena;
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
         Owner = -1;
         Flying = false;
@@ -48,6 +48,11 @@ public class ObjectBasic : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+    }
+
+    public void Reset()
+    {
+        transform.position = startPosition;
     }
 
     public virtual void Throw(bool rightdir, float throwtimer, float throwForceMultiplier)

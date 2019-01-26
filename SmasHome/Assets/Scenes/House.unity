@@ -2653,7 +2653,7 @@ MonoBehaviour:
   Striking: 0
   ThrowDamage: 1
   StrikeDamage: 2
-  Available: 
+  Available: 0000000001000000020000000300000004000000
 --- !u!61 &2034108757
 BoxCollider2D:
   m_ObjectHideFlags: 0
