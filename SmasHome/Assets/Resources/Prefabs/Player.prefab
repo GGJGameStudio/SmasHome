@@ -275,26 +275,28 @@ MonoBehaviour:
   damageAudio: {fileID: 5886117020967738759, guid: 73625ec2fe41fdb4195182645e9e06c4,
     type: 3}
   jumpAudio: {fileID: 1881856669453621997}
-  Gender: 0
+  TombStonePrefab: {fileID: 4127825364223813868, guid: 543cf283240443a49acb53c2f2d082d5,
+    type: 3}
+  Gender: 1
   BabySprite: {fileID: 21300000, guid: 39fdd226ca516c94c82e1769195f1e36, type: 3}
   GirlSprite: {fileID: 21300000, guid: 8b4d6b5b8577a6b43aa8740c98c331c3, type: 3}
-  TeenGirlSprite: {fileID: 21300000, guid: 8ad5a0763d5a4eb48bf54be73b2df482, type: 3}
+  TeenGirlSprite: {fileID: 21300000, guid: 8b4d6b5b8577a6b43aa8740c98c331c3, type: 3}
   WomanSprite: {fileID: 21300000, guid: b9247e03e0c889540a61da0b8594c2fd, type: 3}
-  OldLadySprite: {fileID: 21300000, guid: 41441272e045942478d4e01094c8113c, type: 3}
+  GranySprite: {fileID: 21300000, guid: ed076b1019e6df5468a950f91d2dcb53, type: 3}
   BoySprite: {fileID: 21300000, guid: e285c8fba1f517245b06c44190782273, type: 3}
   TeenBoySprite: {fileID: 21300000, guid: 25b3f06ce9543924da6bd4383a386e48, type: 3}
   ManSprite: {fileID: 21300000, guid: 03a41e299710c7946a8c4d192c3e6d44, type: 3}
-  OldManSprite: {fileID: 21300000, guid: 1c223a967cd998a49a05373d3cfaf609, type: 3}
+  PapySprite: {fileID: 21300000, guid: 1c223a967cd998a49a05373d3cfaf609, type: 3}
   GhostSprite: {fileID: 21300000, guid: 66dbc61d3c6e9e04fa0da4155b7f600d, type: 3}
   BabyAnimator: {fileID: 0}
   GirlAnimator: {fileID: 9100000, guid: 286ee6b3d109cf945a487a3d96b9b64d, type: 2}
-  TeenGirlAnimator: {fileID: 0}
+  TeenGirlAnimator: {fileID: 9100000, guid: 286ee6b3d109cf945a487a3d96b9b64d, type: 2}
   WomanAnimator: {fileID: 0}
-  OldLadyAnimator: {fileID: 0}
+  GranyAnimator: {fileID: 0}
   BoyAnimator: {fileID: 0}
   TeenBoyAnimator: {fileID: 0}
   ManAnimator: {fileID: 0}
-  OldManAnimator: {fileID: 0}
+  PapyAnimator: {fileID: 0}
   GhostAnimator: {fileID: 0}
   CurrentPhase: 0
   PlayerNumber: 2
@@ -312,7 +314,7 @@ Animator:
   m_GameObject: {fileID: 4048967559217271961}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 286ee6b3d109cf945a487a3d96b9b64d, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -39,6 +40,9 @@ public class ArenaController : MonoBehaviour
         var players = GameObject.FindGameObjectsWithTag("Player");
 
         var maxPhase = PlayerPhase.BABY;
+        var minPhase = PlayerPhase.GHOST;
+        var nbGhost = 0;
+        GameObject winner = null;
 
         foreach (GameObject player in players)
         {
@@ -47,7 +51,29 @@ public class ArenaController : MonoBehaviour
             {
                 maxPhase = phase;
             }
+
+            if (phase < minPhase)
+            {
+                minPhase = phase;
+                winner = player;
+            }
+
+            if (phase == PlayerPhase.GHOST)
+            {
+                nbGhost++;
+            }
+
+            if (nbGhost >= Global.NbPlayers - 1)
+            {
+                Win(winner);
+            }
         }
+
+        if (maxPhase == PlayerPhase.GHOST)
+        {
+            maxPhase = PlayerPhase.OLD;
+        }
+
         return maxPhase;
     }
 
@@ -58,5 +84,11 @@ public class ArenaController : MonoBehaviour
         {
             obj.GetComponent<ObjectBasic>().Reset();
         }
+    }
+
+    private void Win(GameObject winner)
+    {
+        //TODO
+        Debug.Log(winner.GetComponent<PlayerController>().PlayerNumber);
     }
 }
