@@ -1,15 +1,24 @@
 ﻿using System.Collections;
+using Assets;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectBasic : MonoBehaviour
 {
+    [HideInInspector]
     public int Owner;
+    [HideInInspector]
     public bool Flying = false;
+    [HideInInspector]
     public bool Striking = false;
 
-    private float ThrowDamage = 1;
-    private float StrikeDamage = 2;
+    public float ThrowDamage = 1;
+    public float StrikeDamage = 2;
+    public List<PlayerPhase> Available;
+
+    private Vector3 startPosition;
+
+    private GameObject arena;
 
     // Start is called before the first frame update
     void Start()
@@ -17,21 +26,33 @@ public class ObjectBasic : MonoBehaviour
         Owner = -1;
         Flying = false;
         Striking = false;
+
+        startPosition = transform.position;
+
+        arena = GameObject.FindGameObjectWithTag("Arena");
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (Flying && gameObject.GetComponent<Rigidbody2D>().velocity.magnitude < 1 && gameObject.GetComponent<Rigidbody2D>().angularVelocity < 1)
         {
             Flying = false;
             Owner = -1;
         }
+
+        if (Available.Contains(arena.GetComponent<ArenaController>().ArenaPhase))
+        {
+            gameObject.SetActive(true);
+        } else
+        {
+            gameObject.SetActive(false);
+        }
     }
 
-    public virtual void Throw(bool rightdir, float throwtimer)
+    public virtual void Throw(bool rightdir, float throwtimer, float throwForceMultiplier)
     {
-        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2((rightdir ? 1 : -1) * 20 * throwtimer, 2 * throwtimer), ForceMode2D.Impulse);
+        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2((rightdir ? 1 : -1) * 20 * throwtimer * throwForceMultiplier, 2 * throwtimer * throwForceMultiplier), ForceMode2D.Impulse);
     }
 
     public virtual void Strike(bool rightdir)

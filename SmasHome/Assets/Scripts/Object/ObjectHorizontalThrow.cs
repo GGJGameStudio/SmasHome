@@ -11,7 +11,7 @@ public class ObjectHorizontalThrow : ObjectBasic
 
     }
 
-    public override void Throw(bool rightdir, float throwtimer)
+    public override void Throw(bool rightdir, float throwtimer, float throwForceMultiplier)
     {
         gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2((rightdir ? 1 : -1) * 18 * throwtimer, 3 * throwtimer), ForceMode2D.Impulse);
     }

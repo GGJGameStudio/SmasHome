@@ -51,11 +51,11 @@ TagManager:
   - name: PlayerBack
     uniqueID: 1210374807
     locked: 0
-  - name: PlayerFront
-    uniqueID: 2203274741
-    locked: 0
   - name: EnvironmentFront
     uniqueID: 353614167
+    locked: 0
+  - name: PlayerFront
+    uniqueID: 2203274741
     locked: 0
   - name: Object
     uniqueID: 3814443913

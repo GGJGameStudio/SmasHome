@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public float Age;
     public float Speed;
     public float JumpForce;
+    public float ThrowForce;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +42,7 @@ public class PlayerController : MonoBehaviour
         CurrentPhase = PlayerPhase.BABY;
         throwTimer = 0f;
         throwing = false;
+        ThrowForce = 1f;
 
     }
 
@@ -47,7 +50,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         UpdatePlayerPhase();
-        UpdatePlayerSprite();
 
         //deplacement
         var horizontal = Input.GetAxis("Horizontal" + PlayerNumber);
@@ -100,10 +102,12 @@ public class PlayerController : MonoBehaviour
             if (vertical > 0.9)
             {
                 front = false;
+                this.GetComponent<SpriteRenderer>().material.SetFloat("_IsBackground", 1.0f);
             }
             if (vertical < -0.9)
             {
                 front = true;
+                this.GetComponent<SpriteRenderer>().material.SetFloat("_IsBackground", 0.0f);
             }
         }
 
@@ -131,7 +135,7 @@ public class PlayerController : MonoBehaviour
                 grabbed.GetComponent<BoxCollider2D>().enabled = true;
                 grabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 grabbed.layer = LayerMask.NameToLayer("Object");
-                grabbed.GetComponent<ObjectBasic>().Throw(rightdir, throwTimer);
+                grabbed.GetComponent<ObjectBasic>().Throw(rightdir, throwTimer, ThrowForce);
                 grabbed.GetComponent<ObjectBasic>().Flying = true;
                 Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), grabbed.GetComponent<Collider2D>(), true);
                 StartCoroutine(EnableCollision(gameObject.GetComponent<BoxCollider2D>(), grabbed.GetComponent<Collider2D>()));
@@ -226,40 +230,55 @@ public class PlayerController : MonoBehaviour
 
     private void UpdatePlayerPhase()
     {
+        PlayerPhase newphase;
+
         if (Age < 3)
         {
-            CurrentPhase = PlayerPhase.BABY;
+            newphase = PlayerPhase.BABY;
+            CurrentPhase = newphase;
             Speed = 1;
             JumpForce = 0;
+            ThrowForce = 0.5f;
         }
         else if (Age < 10)
         {
-            CurrentPhase = PlayerPhase.CHILD;
+            newphase = PlayerPhase.CHILD;
             Speed = 2;
             JumpForce = 6;
+            ThrowForce = 0.8f;
         }
         else if (Age < 18)
         {
-            CurrentPhase = PlayerPhase.TEEN;
+            newphase = PlayerPhase.TEEN;
             Speed = 3;
             JumpForce = 8;
+            ThrowForce = 1f;
         }
         else if (Age < 60)
         {
-            CurrentPhase = PlayerPhase.ADULT;
+            newphase = PlayerPhase.ADULT;
             Speed = 3;
             JumpForce = 8;
+            ThrowForce = 1.2f;
         }
         else if (Age < 100)
         {
-            CurrentPhase = PlayerPhase.OLD;
+            newphase = PlayerPhase.OLD;
             Speed = 2;
             JumpForce = 6;
+            ThrowForce = 1f;
         }
         else
         {
-            CurrentPhase = PlayerPhase.GHOST;
+            newphase = PlayerPhase.GHOST;
             Speed = 2;
+            ThrowForce = 0f;
+        }
+
+        if (newphase != CurrentPhase)
+        {
+            CurrentPhase = newphase;
+            UpdatePlayerSprite();
         }
     }
 
@@ -284,6 +303,7 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
+
 
     private IEnumerator EnableCollision(Collider2D collider1, Collider2D collider2)
     {

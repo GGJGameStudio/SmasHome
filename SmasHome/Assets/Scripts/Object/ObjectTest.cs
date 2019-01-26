@@ -12,7 +12,7 @@ public class ObjectTest : ObjectBasic
         bubblePrefab = Resources.Load("Prefabs/Bubble");
     }
 
-    public override void Throw(bool rightdir, float throwtimer)
+    public override void Throw(bool rightdir, float throwtimer, float throwForceMultiplier)
     {
         gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2((rightdir ? 1 : -1) * 2 * throwtimer, 12 * throwtimer), ForceMode2D.Impulse);
 
@@ -22,6 +22,23 @@ public class ObjectTest : ObjectBasic
     public override void StrikeHit(GameObject player)
     {
         base.StrikeHit(player);
+
+        var bubblePos = player.transform.position;
+
+        bubblePos.x += 0.5f;
+        bubblePos.y += 0.5f;
+
+        var bubble = Instantiate(bubblePrefab, bubblePos, Quaternion.identity) as GameObject;
+
+        if (bubble != null)
+        {
+            bubble.GetComponent<BubbleBehaviour>().Pop();
+        }
+    }
+
+    public override void ThrowHit(GameObject player)
+    {
+        base.ThrowHit(player);
 
         var bubblePos = player.transform.position;
 

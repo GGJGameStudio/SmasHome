@@ -14,5 +14,6 @@ namespace Assets
         }
 
         public static int NbPlayers { get; set; }
+
     }
 }
