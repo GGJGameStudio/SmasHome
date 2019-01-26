@@ -50,6 +50,11 @@ public class ObjectBasic : MonoBehaviour
         }
     }
 
+    public void Reset()
+    {
+        transform.position = startPosition;
+    }
+
     public virtual void Throw(bool rightdir, float throwtimer, float throwForceMultiplier)
     {
         gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2((rightdir ? 1 : -1) * 20 * throwtimer * throwForceMultiplier, 2 * throwtimer * throwForceMultiplier), ForceMode2D.Impulse);
