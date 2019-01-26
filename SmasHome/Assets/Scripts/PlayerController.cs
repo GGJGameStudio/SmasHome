@@ -154,6 +154,10 @@ public class PlayerController : MonoBehaviour
             onFloor = true;
             animator.SetBool("Jumping", false);
             animator.SetBool("Landing", true);
+        } else if (collision2D.gameObject.tag == "Object")
+        {
+            Debug.Log("ouille");
         }
+        
     }
 }

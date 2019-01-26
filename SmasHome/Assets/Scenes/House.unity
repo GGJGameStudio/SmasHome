@@ -704,7 +704,7 @@ Transform:
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &835728374
 GameObject:
@@ -719,9 +719,9 @@ GameObject:
   - component: {fileID: 835728376}
   - component: {fileID: 835728375}
   - component: {fileID: 835728379}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Square (11)
-  m_TagString: Floor
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -902,7 +902,7 @@ PrefabInstance:
     - target: {fileID: 4048967559217271962, guid: 3056ed9a8e17d68438132ce8eff27a56,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4048967559217271962, guid: 3056ed9a8e17d68438132ce8eff27a56,
         type: 3}
@@ -1562,7 +1562,7 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1919297038
 Rigidbody2D:
@@ -1863,7 +1863,7 @@ PrefabInstance:
     - target: {fileID: 2191606460287362519, guid: aabaa5112c3000d458c5c58d73bb69bb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2191606460287362519, guid: aabaa5112c3000d458c5c58d73bb69bb,
         type: 3}
