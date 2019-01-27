@@ -215,7 +215,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Jump
-        if (Input.GetButtonDown("Jump" + PlayerNumber) && onFloor && CurrentPhase > PlayerPhase.BABY)
+        if (Input.GetButtonDown("Jump" + PlayerNumber) && (onFloor || CurrentPhase == PlayerPhase.GHOST) && CurrentPhase > PlayerPhase.BABY)
         {
             //Debug.Log("jump");
             rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
@@ -270,6 +270,7 @@ public class PlayerController : MonoBehaviour
                 grabbed.layer = LayerMask.NameToLayer("Object");
                 grabbed.GetComponent<ObjectBasic>().Throw(rightdir, throwTimer, ThrowForce);
                 grabbed.GetComponent<ObjectBasic>().Flying = true;
+                grabbed.GetComponent<ObjectBasic>().Owner = -1;
                 Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), grabbed.GetComponent<Collider2D>(), true);
                 StartCoroutine(EnableCollision(gameObject.GetComponent<BoxCollider2D>(), grabbed.GetComponent<Collider2D>()));
                 grabbed = null;
@@ -289,6 +290,7 @@ public class PlayerController : MonoBehaviour
                     grabbed.GetComponent<BoxCollider2D>().enabled = false;
                     grabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
                     grabbed.GetComponent<ObjectBasic>().Owner = PlayerNumber;
+                    grabbed.GetComponent<ObjectBasic>().Timer = 0f;
                 }
             }
             else
@@ -413,7 +415,9 @@ public class PlayerController : MonoBehaviour
         {
             newphase = PlayerPhase.GHOST;
             Speed = 2;
+            JumpForce = 0.6f;
             ThrowForce = 0f;
+            rigidbody.gravityScale = 0.1f;
         }
 
         if (newphase != CurrentPhase)

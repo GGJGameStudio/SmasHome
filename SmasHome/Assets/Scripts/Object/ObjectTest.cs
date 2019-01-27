@@ -17,7 +17,7 @@ public class ObjectTest : ObjectBasic
     {
         gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2((rightdir ? 1 : -1) * 2 * throwtimer * throwForceMultiplier, 12 * throwtimer * throwForceMultiplier), ForceMode2D.Impulse);
 
-        gameObject.GetComponent<Rigidbody2D>().AddTorque(100 * throwtimer);
+        gameObject.GetComponent<Rigidbody2D>().AddTorque(100 * throwtimer * throwForceMultiplier);
     }
 
     public override void StrikeHit(GameObject player)

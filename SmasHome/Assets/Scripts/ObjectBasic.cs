@@ -11,9 +11,11 @@ public class ObjectBasic : MonoBehaviour
     public bool Flying = false;
     [HideInInspector]
     public bool Striking = false;
+    public float Timer;
 
     public float ThrowDamage = 1;
     public float StrikeDamage = 2;
+    public float LifeTime = -1;
     public List<PlayerPhase> Available;
 
     private Vector3 startPosition;
@@ -26,6 +28,7 @@ public class ObjectBasic : MonoBehaviour
         Owner = -1;
         Flying = false;
         Striking = false;
+        Timer = 0f;
 
         startPosition = transform.position;
 
@@ -38,7 +41,6 @@ public class ObjectBasic : MonoBehaviour
         if (Flying && gameObject.GetComponent<Rigidbody2D>().velocity.magnitude < 1 && gameObject.GetComponent<Rigidbody2D>().angularVelocity < 1)
         {
             Flying = false;
-            Owner = -1;
         }
 
         if (Available.Contains(arena.GetComponent<ArenaController>().ArenaPhase))
@@ -48,11 +50,21 @@ public class ObjectBasic : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+
+        if (Owner == -1)
+        {
+            Timer += Time.deltaTime;
+            if (LifeTime != -1 && Timer > LifeTime)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
     public void Reset()
     {
         transform.position = startPosition;
+        Timer = 0f;
     }
 
     public virtual void Throw(bool rightdir, float throwtimer, float throwForceMultiplier)
