@@ -156,9 +156,11 @@ public class PlayerController : MonoBehaviour
     public PlayerPhase CurrentPhase;
     public int PlayerNumber;
     public float Age;
+
     public float Speed;
     public float JumpForce;
     public float ThrowForce;
+    public float MaxCarryWeigth;
 
     // Start is called before the first frame update
     void Start()
@@ -244,15 +246,22 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (front)
+        if (CurrentPhase != PlayerPhase.GHOST)
         {
-            gameObject.layer = LayerMask.NameToLayer("PlayerFront");
+            if (front)
+            {
+                gameObject.layer = LayerMask.NameToLayer("PlayerFront");
+                gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "PlayerFront";
+            }
+            else
+            {
+                gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "PlayerBack";
+                gameObject.layer = LayerMask.NameToLayer("PlayerBack");
+            }
+        } else
+        {
+            gameObject.layer = LayerMask.NameToLayer("Ghost");
             gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "PlayerFront";
-        }
-        else
-        {
-            gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "PlayerBack";
-            gameObject.layer = LayerMask.NameToLayer("PlayerBack");
         }
 
         //grab
@@ -268,6 +277,7 @@ public class PlayerController : MonoBehaviour
                 {
                     var child = grabbed.transform.GetChild(i).gameObject;
                     child.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                    child.GetComponent<Rigidbody2D>().mass = child.GetComponent<ObjectBasic>().Mass;
                     child.GetComponent<ObjectBasic>().Flying = true;
                     child.GetComponent<SpriteRenderer>().sortingLayerName = "Object";
                     Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), child.GetComponent<Collider2D>(), true);
@@ -277,6 +287,7 @@ public class PlayerController : MonoBehaviour
                 grabbed.transform.parent = null;
                 grabbed.GetComponent<Collider2D>().enabled = true;
                 grabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                grabbed.GetComponent<Rigidbody2D>().mass = grabbed.GetComponent<ObjectBasic>().Mass;
                 grabbed.layer = LayerMask.NameToLayer("Object");
                 grabbed.GetComponent<ObjectBasic>().Throw(rightdir, throwTimer, ThrowForce);
                 grabbed.GetComponent<ObjectBasic>().Flying = true;
@@ -303,14 +314,27 @@ public class PlayerController : MonoBehaviour
                         //grab infinite object
                         grabbed = Instantiate(grab.CanGrab[0].GetComponent<ObjectBasic>().InfiniteObject, transform.position, Quaternion.identity) as GameObject;
                     }
-
-                    grabbed.transform.parent = grab.transform;
-                    grabbed.transform.localPosition = Vector3.zero;
-                    grabbed.GetComponent<Collider2D>().enabled = false;
-                    grabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
-                    grabbed.GetComponent<ObjectBasic>().Owner = PlayerNumber;
-                    grabbed.GetComponent<ObjectBasic>().Timer = 0f;
-                    grabbed.GetComponent<SpriteRenderer>().sortingLayerName = "Object";
+                    
+                    if (grabbed.GetComponent<ObjectBasic>().Mass <= MaxCarryWeigth)
+                    {
+                        grabbed.transform.parent = grab.transform;
+                        grabbed.transform.localPosition = Vector3.zero;
+                        grabbed.transform.localScale = new Vector3(1 / transform.localScale.x, 1 / transform.localScale.y, 1 / transform.localScale.z);
+                        grabbed.GetComponent<Collider2D>().enabled = false;
+                        grabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+                        grabbed.GetComponent<ObjectBasic>().Owner = PlayerNumber;
+                        grabbed.GetComponent<ObjectBasic>().Timer = 0f;
+                        grabbed.GetComponent<SpriteRenderer>().sortingLayerName = "Object";
+                    } else
+                    {
+                        if (grabbed != null)
+                        {
+                            Destroy(grabbed);
+                        }
+                        grabbed = null;
+                        //todo feedback "trop lourd"
+                    }
+                    
                 }
             }
             else
@@ -406,35 +430,43 @@ public class PlayerController : MonoBehaviour
             CurrentPhase = newphase;
             Speed = 1;
             JumpForce = 0;
-            ThrowForce = 0.5f;
+            ThrowForce = 1f;
+            MaxCarryWeigth = 1f;
         }
         else if (Age < 10)
         {
             newphase = PlayerPhase.CHILD;
             Speed = 2;
             JumpForce = 6;
-            ThrowForce = 0.8f;
+            ThrowForce = 1.5f;
+            MaxCarryWeigth = 2f;
         }
         else if (Age < 18)
         {
             newphase = PlayerPhase.TEEN;
             Speed = 3;
             JumpForce = 8;
-            ThrowForce = 1f;
+            ThrowForce = 2f;
+            MaxCarryWeigth = 3f;
+            transform.localScale = new Vector3(1, 1.4f, 1);
         }
         else if (Age < 60)
         {
             newphase = PlayerPhase.ADULT;
             Speed = 3;
             JumpForce = 8;
-            ThrowForce = 1.2f;
+            ThrowForce = 2.5f;
+            MaxCarryWeigth = 3f;
+            transform.localScale = new Vector3(1.2f, 1.6f, 1);
         }
         else if (Age < 100)
         {
             newphase = PlayerPhase.OLD;
             Speed = 2;
             JumpForce = 6;
-            ThrowForce = 1f;
+            ThrowForce = 1.8f;
+            MaxCarryWeigth = 2f;
+            transform.localScale = new Vector3(1.2f, 1.4f, 1);
         }
         else
         {
@@ -443,6 +475,7 @@ public class PlayerController : MonoBehaviour
             JumpForce = 0.6f;
             ThrowForce = 0f;
             rigidbody.gravityScale = 0.1f;
+            MaxCarryWeigth = 2f;
         }
 
         if (newphase != CurrentPhase)
@@ -454,6 +487,7 @@ public class PlayerController : MonoBehaviour
 
             CurrentPhase = newphase;
             UpdatePlayerSprite();
+            Reset();
         }
     }
 

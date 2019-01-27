@@ -14,6 +14,7 @@ public class ObjectBasic : MonoBehaviour
     [HideInInspector]
     public float Timer;
 
+    public float Mass = 1;
     public float ThrowDamage = 1;
     public float StrikeDamage = 2;
     public float LifeTime = -1;
@@ -39,6 +40,11 @@ public class ObjectBasic : MonoBehaviour
         startPosition = transform.position;
 
         arena = GameObject.FindGameObjectWithTag("Arena");
+
+        if (gameObject.GetComponent<Rigidbody2D>().bodyType == RigidbodyType2D.Dynamic)
+        {
+            gameObject.GetComponent<Rigidbody2D>().mass = Mass;
+        }
     }
 
     // Update is called once per frame
@@ -66,6 +72,7 @@ public class ObjectBasic : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
 
         PostUpdate();
     }
@@ -178,6 +185,7 @@ public class ObjectBasic : MonoBehaviour
             {
                 var contact = col.contacts[0];
                 gameObject.transform.parent = obj.transform;
+                gameObject.transform.localScale = new Vector3(1 / obj.transform.localScale.x, 1 / obj.transform.localScale.y, 1 / obj.transform.localScale.z);
                 if (obj.tag == "Floor")
                 {
                     gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
