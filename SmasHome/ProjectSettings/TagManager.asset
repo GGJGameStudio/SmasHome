@@ -9,6 +9,7 @@ TagManager:
   - Grab
   - Canvas
   - Arena
+  - Fondu
   layers:
   - Default
   - TransparentFX

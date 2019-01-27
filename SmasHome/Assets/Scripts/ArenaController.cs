@@ -79,6 +79,17 @@ public class ArenaController : MonoBehaviour
 
     private void NewPhaseTransition()
     {
+        var fondu = GameObject.FindGameObjectWithTag("Fondu");
+        fondu.GetComponent<Fondu>().startFondu();
+
+        var fonduspeed = fondu.GetComponent<Fondu>().Speed;
+        StartCoroutine(DelayReset(fonduspeed));
+    }
+
+    private IEnumerator DelayReset(float speed)
+    {
+        yield return new WaitForSeconds(3.14f * 0.5f / speed);
+        
         var players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject player in players)
         {

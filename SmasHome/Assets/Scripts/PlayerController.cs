@@ -449,7 +449,6 @@ public class PlayerController : MonoBehaviour
         //lâche l'objet
         if (grabbed != null)
         {
-            Debug.Log("lache");
             grabbed.transform.parent = null;
             grabbed.GetComponent<BoxCollider2D>().enabled = true;
             grabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;

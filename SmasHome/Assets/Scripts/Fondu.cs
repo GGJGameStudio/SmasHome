@@ -5,6 +5,7 @@ using UnityEngine;
 public class Fondu : MonoBehaviour
 {
     public SpriteRenderer sprite;
+    public float Speed = 1.5f;
     private float startTime = 0.0f;
     private bool started = false;
 
@@ -17,7 +18,7 @@ public class Fondu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float delta = (Time.realtimeSinceStartup - startTime) * 1.5f;
+        float delta = (Time.realtimeSinceStartup - startTime) * Speed;
         if (started && delta < 3.14f)
         {
             float alpha = 0.0f;
