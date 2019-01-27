@@ -66,7 +66,7 @@ public class ArenaController : MonoBehaviour
                 winner = player;
             }
 
-            if (phase == PlayerPhase.GHOST)
+            if (phase == PlayerPhase.GHOST || !player.activeSelf)
             {
                 nbGhost++;
             }
