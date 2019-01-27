@@ -90,7 +90,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1403750588090484099}
-  m_BodyType: 2
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -144,6 +144,9 @@ MonoBehaviour:
   Owner: 0
   Flying: 0
   Striking: 0
+  Timer: 0
   ThrowDamage: 1
   StrikeDamage: 2
+  LifeTime: -1
   Available: 0000000001000000020000000300000004000000
+  BubblePrebab: {fileID: 0}
