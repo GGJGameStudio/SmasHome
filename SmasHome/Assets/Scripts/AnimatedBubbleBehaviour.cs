@@ -10,6 +10,6 @@ public class AnimatedBubbleBehaviour : BasicBubbleBehaviour
         
         animator.enabled = true;
 
-        Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length + 0.2f);
+        Destroy(gameObject, animator.GetCurrentAnimatorStateInfo(0).length + 0.5f);
     }
 }

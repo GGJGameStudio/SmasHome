@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1140173784165218028}
   - component: {fileID: 6831236512549406873}
   - component: {fileID: 2488610431411404811}
-  m_Layer: 0
+  m_Layer: 18
   m_Name: ZAP
   m_TagString: Bubble
   m_Icon: {fileID: 0}
