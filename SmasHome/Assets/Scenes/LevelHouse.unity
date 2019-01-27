@@ -3057,12 +3057,12 @@ PrefabInstance:
     - target: {fileID: 4048967559217271962, guid: 3056ed9a8e17d68438132ce8eff27a56,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.83
+      value: -4.39
       objectReference: {fileID: 0}
     - target: {fileID: 4048967559217271962, guid: 3056ed9a8e17d68438132ce8eff27a56,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.51
+      value: -0.35
       objectReference: {fileID: 0}
     - target: {fileID: 4048967559217271962, guid: 3056ed9a8e17d68438132ce8eff27a56,
         type: 3}
@@ -3233,12 +3233,12 @@ PrefabInstance:
     - target: {fileID: 4048967559217271962, guid: 3056ed9a8e17d68438132ce8eff27a56,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.95
+      value: -0.42
       objectReference: {fileID: 0}
     - target: {fileID: 4048967559217271962, guid: 3056ed9a8e17d68438132ce8eff27a56,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.1
+      value: -0.92
       objectReference: {fileID: 0}
     - target: {fileID: 4048967559217271962, guid: 3056ed9a8e17d68438132ce8eff27a56,
         type: 3}
@@ -3675,7 +3675,7 @@ GameObject:
   - component: {fileID: 756650167}
   m_Layer: 0
   m_Name: fondu
-  m_TagString: Untagged
+  m_TagString: Fondu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

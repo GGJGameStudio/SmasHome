@@ -145,8 +145,13 @@ MonoBehaviour:
   Flying: 0
   Striking: 0
   Timer: 0
+  Mass: 1
   ThrowDamage: 0.5
   StrikeDamage: 0
   LifeTime: 30
   Available: 0000000001000000020000000300000004000000
-  BubblePrebab: {fileID: 0}
+  BubblePrefab: {fileID: 6578795510169116711, guid: e4e00e7668bf84247b87f666d5671002,
+    type: 3}
+  InfiniteObject: {fileID: 0}
+  ExplodeOnHit: 0
+  StickOnHit: 0
