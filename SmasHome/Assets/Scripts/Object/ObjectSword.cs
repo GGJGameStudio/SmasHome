@@ -12,4 +12,10 @@ public class ObjectSword : ObjectBasic
 
         gameObject.GetComponent<Rigidbody2D>().AddTorque(150 + 50 * throwtimer * throwForceMultiplier);
     }
+
+    public override void Strike(bool rightdir)
+    {
+        gameObject.transform.localPosition = new Vector3(0, -0.3f, 0);
+        gameObject.transform.localRotation = Quaternion.Euler(0, 0, (rightdir?-1:1)*30);
+    }
 }
