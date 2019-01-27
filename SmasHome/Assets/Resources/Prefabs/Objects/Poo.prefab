@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4060664545405515638}
   - component: {fileID: 993143645746652330}
   - component: {fileID: 3178496544014961590}
-  - component: {fileID: 9115804771685133418}
+  - component: {fileID: 2142534253116192906}
   m_Layer: 13
   m_Name: Poo
   m_TagString: Object
@@ -129,7 +129,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.23409605, y: 0.21011746}
   m_EdgeRadius: 0
---- !u!114 &9115804771685133418
+--- !u!114 &2142534253116192906
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,12 +138,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1403750588090484099}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25200b2d461994f4096f999f88ed1faa, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a7e3c912d1f67040bc5e3bf87e82f35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Owner: 0
   Flying: 0
   Striking: 0
-  ThrowDamage: 1
-  StrikeDamage: 2
+  Timer: 0
+  ThrowDamage: 0.5
+  StrikeDamage: 0
+  LifeTime: 30
   Available: 0000000001000000020000000300000004000000
+  BubblePrebab: {fileID: 0}
