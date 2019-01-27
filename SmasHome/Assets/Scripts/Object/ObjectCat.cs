@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ObjectCat : ObjectBasic
 {
+    private Animator animator;
+    private SpriteRenderer renderer;
+
     private float movetimer;
     private bool directionRight;
 
@@ -13,10 +16,16 @@ public class ObjectCat : ObjectBasic
         base.Start();
         directionRight = true;
         movetimer = 0;
+
+        renderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     public override void PostUpdate(float deltaTime)
     {
+        animator.SetBool("Angry", Owner != -1 || Flying);
+        renderer.flipX = !this.directionRight;
+
         if (directionRight)
         {
             movetimer += deltaTime;
