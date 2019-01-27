@@ -399,7 +399,7 @@ public class PlayerController : MonoBehaviour
         {
             newphase = PlayerPhase.GHOST;
             Speed = 2;
-            JumpForce = 0.2f;
+            JumpForce = 0.6f;
             ThrowForce = 0f;
             rigidbody.gravityScale = 0.1f;
         }
