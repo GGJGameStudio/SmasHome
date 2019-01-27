@@ -10,10 +10,15 @@ public class ArenaController : MonoBehaviour
     public PlayerPhase ArenaPhase { get; set; }
     public float TimeScale = 0.01f;
 
+    public MusicManagerFightScene musicManager;
+   
+
     // Start is called before the first frame update
     void Start()
     {
         ArenaPhase = PlayerPhase.BABY;
+        GameObject musicManagerGameObj = GameObject.Find("Music");
+        musicManager = musicManagerGameObj.GetComponent<MusicManagerFightScene>();
     }
 
     // Update is called once per frame
@@ -24,7 +29,9 @@ public class ArenaController : MonoBehaviour
         if (newArenaPhase != ArenaPhase)
         {
             ArenaPhase = newArenaPhase;
+            musicManager.setPhaseState(ArenaPhase);
             NewPhaseTransition();
+           
         }
 
         //time
