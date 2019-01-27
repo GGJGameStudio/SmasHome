@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class TestFloBehaviour : MonoBehaviour
 {
-    public Object bimPrefab;
-    public Vector3 bimPosition;
+    public Object bubblePrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -17,10 +16,10 @@ public class TestFloBehaviour : MonoBehaviour
     {
         while (true)
         {
-            (Instantiate(bimPrefab, bimPosition, Quaternion.identity) as GameObject)
-                .GetComponent<BubbleBehaviour>().Pop();
+            (Instantiate(bubblePrefab, transform.position, Quaternion.identity) as GameObject)
+                .GetComponent<BasicBubbleBehaviour>().Pop();
 
-            yield return new WaitForSeconds(1.1f);
+            yield return new WaitForSeconds(2f);
         }
     }
 }

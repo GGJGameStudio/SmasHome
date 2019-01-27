@@ -23,7 +23,7 @@ public class ObjectBasic : MonoBehaviour
 
     private GameObject arena;
 
-    public Object BubblePrebab;
+    public Object BubblePrefab;
     public Object InfiniteObject;
     public bool ExplodeOnHit;
 
@@ -99,11 +99,11 @@ public class ObjectBasic : MonoBehaviour
         bubblePos.x += 0.5f;
         bubblePos.y += 0.5f;
 
-        var bubble = Instantiate(BubblePrebab, bubblePos, Quaternion.identity) as GameObject;
+        var bubble = Instantiate(BubblePrefab, bubblePos, Quaternion.identity) as GameObject;
 
         if (bubble != null)
         {
-            bubble.GetComponent<BubbleBehaviour>().Pop();
+            bubble.GetComponent<BasicBubbleBehaviour>().Pop();
         }
     }
 
@@ -116,11 +116,11 @@ public class ObjectBasic : MonoBehaviour
         bubblePos.x += 0.5f;
         bubblePos.y += 0.5f;
 
-        var bubble = Instantiate(BubblePrebab, bubblePos, Quaternion.identity) as GameObject;
+        var bubble = Instantiate(BubblePrefab, bubblePos, Quaternion.identity) as GameObject;
 
         if (bubble != null)
         {
-            bubble.GetComponent<BubbleBehaviour>().Pop();
+            bubble.GetComponent<BasicBubbleBehaviour>().Pop();
         }
     }
 

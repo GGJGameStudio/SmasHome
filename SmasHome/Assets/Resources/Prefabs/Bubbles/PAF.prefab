@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2025199740567772222}
   - component: {fileID: 2025199740567772223}
   - component: {fileID: 2025199740567772216}
+  - component: {fileID: 962454916825878966}
   m_Layer: 0
   m_Name: PAF
   m_TagString: Untagged
@@ -99,3 +100,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &962454916825878966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2025199740567772217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1198941c2bbd9cc4bbc3324c9f2790b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
