@@ -24,8 +24,8 @@ public class ObjectCaca : ObjectBasic
 
     public override void Throw(bool rightdir, float throwtimer, float throwForceMultiplier)
     {
-        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2((rightdir ? 1 : -1) * throwForceMultiplier * (8 - 6 * throwtimer), 30 * throwtimer * throwForceMultiplier), ForceMode2D.Impulse);
+        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2((rightdir ? 1 : -1) * throwForceMultiplier * (6 - 4 * throwtimer), 20 * throwtimer * throwForceMultiplier), ForceMode2D.Impulse);
 
-        gameObject.GetComponent<Rigidbody2D>().AddTorque(50 * throwtimer * throwForceMultiplier);
+        gameObject.GetComponent<Rigidbody2D>().AddTorque(20 * throwtimer * throwForceMultiplier);
     }
 }
