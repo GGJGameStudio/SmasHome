@@ -17,7 +17,7 @@ public class CameraResize : MonoBehaviour
     {
         mainCam = GetComponent<Camera>();
         CamMinSize = mainCam.orthographicSize;
-        CamMaxSize = mainCam.orthographicSize*RapportMinMaxSize;
+        CamMaxSize = CamMinSize * RapportMinMaxSize;
         InitialPos = transform.position;
         
 
@@ -27,6 +27,7 @@ public class CameraResize : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CamMaxSize = CamMinSize * RapportMinMaxSize;
         int nbChild = transform.childCount;
         Vector3 MinBox = new Vector3(0.0f, 0.0f, 0.0f);
         Vector3 MaxBox = new Vector3(0.0f, 0.0f, 0.0f); ;
@@ -77,7 +78,9 @@ public class CameraResize : MonoBehaviour
         }
         mainCam.transform.position = new Vector3(Middle.x, Middle.y, mainCam.transform.position.z);
 
-        if((Middle.x - size < InitialPos.x - CamMaxSize) ||
+        size = mainCam.orthographicSize;
+
+        if ((Middle.x - size < InitialPos.x - CamMaxSize) ||
           (Middle.y - size < InitialPos.y - CamMaxSize)  ||
           (Middle.x + size > InitialPos.x + CamMaxSize)  ||
           (Middle.y + size > InitialPos.y + CamMaxSize))
