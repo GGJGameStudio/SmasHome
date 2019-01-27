@@ -264,6 +264,7 @@ public class PlayerController : MonoBehaviour
                 grabbed.layer = LayerMask.NameToLayer("Object");
                 grabbed.GetComponent<ObjectBasic>().Throw(rightdir, throwTimer, ThrowForce);
                 grabbed.GetComponent<ObjectBasic>().Flying = true;
+                grabbed.GetComponent<ObjectBasic>().Owner = -1;
                 Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), grabbed.GetComponent<Collider2D>(), true);
                 StartCoroutine(EnableCollision(gameObject.GetComponent<BoxCollider2D>(), grabbed.GetComponent<Collider2D>()));
                 grabbed = null;
@@ -283,6 +284,7 @@ public class PlayerController : MonoBehaviour
                     grabbed.GetComponent<BoxCollider2D>().enabled = false;
                     grabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
                     grabbed.GetComponent<ObjectBasic>().Owner = PlayerNumber;
+                    grabbed.GetComponent<ObjectBasic>().Timer = 0f;
                 }
             }
             else
