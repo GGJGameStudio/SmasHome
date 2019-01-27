@@ -21,6 +21,8 @@ public class ObjectBasic : MonoBehaviour
     public List<PlayerPhase> Available;
 
     private Vector3 startPosition;
+    private RigidbodyType2D startBodyType;
+    private int startLayer;
 
     private GameObject arena;
 
@@ -36,6 +38,8 @@ public class ObjectBasic : MonoBehaviour
         Timer = 0f;
         
         startPosition = transform.position;
+        startBodyType = gameObject.GetComponent<Rigidbody2D>().bodyType;
+        startLayer = gameObject.layer;
 
         arena = GameObject.FindGameObjectWithTag("Arena");
 
@@ -76,12 +80,16 @@ public class ObjectBasic : MonoBehaviour
 
     public void Reset()
     {
-        transform.position = startPosition;
+
         Timer = 0f;
         if (LifeTime != -1 && gameObject.layer != LayerMask.NameToLayer("ObjectBack"))
         {
             Destroy(gameObject);
         }
+
+        transform.position = startPosition;
+        gameObject.GetComponent<Rigidbody2D>().bodyType = startBodyType;
+        gameObject.layer = startLayer;
 
         transform.parent = null;
     }
