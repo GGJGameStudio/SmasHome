@@ -173,7 +173,6 @@ public class PlayerController : MonoBehaviour
         grabbed = null;
         rightdir = true;
         strikeTimer = 0f;
-        Age = 0.1f;
         CurrentPhase = PlayerPhase.BABY;
         throwTimer = 0f;
         throwing = false;
@@ -455,7 +454,10 @@ public class PlayerController : MonoBehaviour
     private IEnumerator EnableCollision(Collider2D collider1, Collider2D collider2)
     {
         yield return new WaitForSeconds(1f);
-        Physics2D.IgnoreCollision(collider1, collider2, false);
+        if (collider1 != null && collider2 != null)
+        {
+            Physics2D.IgnoreCollision(collider1, collider2, false);
+        }
     }
 
     public void Reset()

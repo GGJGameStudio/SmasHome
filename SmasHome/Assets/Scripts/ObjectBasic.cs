@@ -34,8 +34,7 @@ public class ObjectBasic : MonoBehaviour
         Flying = false;
         Striking = false;
         Timer = 0f;
-
-        ExplodeOnHit = false;
+        
         startPosition = transform.position;
 
         arena = GameObject.FindGameObjectWithTag("Arena");
@@ -66,6 +65,8 @@ public class ObjectBasic : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
+        PostUpdate();
     }
 
     public void Reset()
@@ -104,12 +105,6 @@ public class ObjectBasic : MonoBehaviour
         {
             bubble.GetComponent<BubbleBehaviour>().Pop();
         }
-
-        if (ExplodeOnHit)
-        {
-            Explode();
-            Destroy(gameObject);
-        }
     }
 
     public virtual void StrikeHit(GameObject player)
@@ -134,6 +129,11 @@ public class ObjectBasic : MonoBehaviour
         //rien
     }
 
+    public virtual void PostUpdate()
+    {
+        //rien
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.tag == "Grab")
@@ -152,6 +152,19 @@ public class ObjectBasic : MonoBehaviour
         if (col.gameObject.tag == "Grab")
         {
             col.gameObject.GetComponent<Grab>().CanGrab.Remove(gameObject);
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        var obj = col.collider.gameObject;
+        if (obj.tag == "Floor" || obj.tag == "Player" || obj.tag == "Object")
+        {
+            if (ExplodeOnHit)
+            {
+                Explode();
+                Destroy(gameObject);
+            }
         }
     }
 }
