@@ -3,11 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BubbleBehaviour : MonoBehaviour
+public class BimBubbleBehaviour : BasicBubbleBehaviour
 {
     public AnimationCurve curve;
 
-    public void Pop()
+    public override void Pop()
     {
         this.GetComponent<SpriteRenderer>().enabled = true;
 
