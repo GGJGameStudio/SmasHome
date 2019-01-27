@@ -23,7 +23,7 @@ public class UIController : MonoBehaviour
             
             if (player != null)
             {
-                canvas.transform.Find("Age" + i).GetComponent<Text>().text = player.GetComponent<PlayerController>().Age.ToString();
+                canvas.transform.Find("Age" + i).GetComponent<Text>().text = player.GetComponent<PlayerController>().Age.ToString("F1");
             }
         }
     }
