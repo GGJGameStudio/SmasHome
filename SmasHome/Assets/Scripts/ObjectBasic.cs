@@ -24,6 +24,7 @@ public class ObjectBasic : MonoBehaviour
     private GameObject arena;
 
     public Object BubblePrebab;
+    public Object InfiniteObject;
 
     // Start is called before the first frame update
     protected virtual void Start()

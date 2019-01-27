@@ -284,7 +284,16 @@ public class PlayerController : MonoBehaviour
             {
                 if (grab.CanGrab.Count > 0)
                 {
-                    grabbed = grab.CanGrab[0];
+                    if (grab.CanGrab[0].GetComponent<ObjectBasic>().InfiniteObject == null)
+                    {
+                        //grab object
+                        grabbed = grab.CanGrab[0];
+                    } else
+                    {
+                        //grab infinite object
+                        grabbed = Instantiate(grab.CanGrab[0].GetComponent<ObjectBasic>().InfiniteObject, transform.position, Quaternion.identity) as GameObject;
+                    }
+
                     grabbed.transform.parent = grab.transform;
                     grabbed.transform.localPosition = Vector3.zero;
                     grabbed.GetComponent<BoxCollider2D>().enabled = false;

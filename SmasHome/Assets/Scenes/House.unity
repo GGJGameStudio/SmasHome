@@ -1500,6 +1500,7 @@ MonoBehaviour:
   LifeTime: -1
   Available: 
   BubblePrebab: {fileID: 0}
+  InfiniteObject: {fileID: 0}
 --- !u!1001 &979769771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2730,6 +2731,8 @@ MonoBehaviour:
   Available: 0000000001000000020000000300000004000000
   BubblePrebab: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
     type: 3}
+  InfiniteObject: {fileID: 1403750588090484099, guid: 0be1e5f00757a7b45a00668264a0d0d9,
+    type: 3}
 --- !u!61 &2034108757
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2965,6 +2968,7 @@ MonoBehaviour:
   LifeTime: -1
   Available: 
   BubblePrebab: {fileID: 0}
+  InfiniteObject: {fileID: 0}
 --- !u!61 &2102948481
 BoxCollider2D:
   m_ObjectHideFlags: 0
