@@ -79,5 +79,5 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _GhostColor: {r: 0, g: 0.99095273, b: 1, a: 1}
-    - _TeamColor: {r: 0.972549, g: 0, b: 0.8346361, a: 1}
-    - _TeamColorBase: {r: 1, g: 0, b: 0.093075275, a: 1}
+    - _TeamColor: {r: 0.972549, g: 0, b: 0.88105625, a: 1}
+    - _TeamColorBase: {r: 0, g: 1, b: 0.3345785, a: 1}
