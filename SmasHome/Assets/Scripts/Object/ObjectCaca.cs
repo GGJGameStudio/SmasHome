@@ -16,14 +16,4 @@ public class ObjectCaca : ObjectBasic
 
         gameObject.GetComponent<Rigidbody2D>().AddTorque(50 * throwtimer * throwForceMultiplier);
     }
-
-    public override void StrikeHit(GameObject player)
-    {
-        base.StrikeHit(player);
-    }
-
-    public override void ThrowHit(GameObject player)
-    {
-        base.ThrowHit(player);
-    }
 }

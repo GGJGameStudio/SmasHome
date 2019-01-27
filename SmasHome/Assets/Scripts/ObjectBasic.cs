@@ -25,6 +25,7 @@ public class ObjectBasic : MonoBehaviour
 
     public Object BubblePrefab;
     public Object InfiniteObject;
+    public bool ExplodeOnHit;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -34,6 +35,7 @@ public class ObjectBasic : MonoBehaviour
         Striking = false;
         Timer = 0f;
 
+        ExplodeOnHit = false;
         startPosition = transform.position;
 
         arena = GameObject.FindGameObjectWithTag("Arena");
@@ -55,11 +57,12 @@ public class ObjectBasic : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        if (Owner == -1)
+        if (Owner == -1 && gameObject.layer != LayerMask.NameToLayer("ObjectBack"))
         {
             Timer += Time.deltaTime;
             if (LifeTime != -1 && Timer > LifeTime)
             {
+                Explode();
                 Destroy(gameObject);
             }
         }
@@ -69,7 +72,7 @@ public class ObjectBasic : MonoBehaviour
     {
         transform.position = startPosition;
         Timer = 0f;
-        if (LifeTime != -1)
+        if (LifeTime != -1 && gameObject.layer != LayerMask.NameToLayer("ObjectBack"))
         {
             Destroy(gameObject);
         }
@@ -101,6 +104,12 @@ public class ObjectBasic : MonoBehaviour
         {
             bubble.GetComponent<BasicBubbleBehaviour>().Pop();
         }
+
+        if (ExplodeOnHit)
+        {
+            Explode();
+            Destroy(gameObject);
+        }
     }
 
     public virtual void StrikeHit(GameObject player)
@@ -118,6 +127,11 @@ public class ObjectBasic : MonoBehaviour
         {
             bubble.GetComponent<BasicBubbleBehaviour>().Pop();
         }
+    }
+
+    public virtual void Explode()
+    {
+        //rien
     }
 
     void OnTriggerEnter2D(Collider2D col)
