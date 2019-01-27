@@ -310,6 +310,11 @@ public class PlayerController : MonoBehaviour
             {
                 if (grab.CanGrab.Count > 0)
                 {
+                    while (grab.CanGrab.Count > 0 && grab.CanGrab[0] == null)
+                    {
+                        grab.CanGrab.RemoveAt(0);
+                    }
+
                     if (grab.CanGrab[0].GetComponent<ObjectBasic>().InfiniteObject == null)
                     {
                         //grab object
@@ -330,6 +335,7 @@ public class PlayerController : MonoBehaviour
                         grabbed.GetComponent<ObjectBasic>().Owner = PlayerNumber;
                         grabbed.GetComponent<ObjectBasic>().Timer = 0f;
                         grabbed.GetComponent<SpriteRenderer>().sortingLayerName = "Object";
+                        grabbed.layer = LayerMask.NameToLayer("Object");
                     } else
                     {
                         if (grabbed != null)
