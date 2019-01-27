@@ -184,8 +184,6 @@ public class ObjectBasic : MonoBehaviour
             if (StickOnHit && Flying)
             {
                 var contact = col.contacts[0];
-                gameObject.transform.parent = obj.transform;
-                gameObject.transform.localScale = new Vector3(1 / obj.transform.localScale.x, 1 / obj.transform.localScale.y, 1 / obj.transform.localScale.z);
                 if (obj.tag == "Floor")
                 {
                     gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
@@ -203,6 +201,8 @@ public class ObjectBasic : MonoBehaviour
                 gameObject.transform.position = gameObject.transform.position - (delta * 0.5f);
                 var angle = Mathf.Atan2(delta.y, delta.x) * 180 / Mathf.PI;
                 gameObject.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, angle - 45 + 180));
+                gameObject.transform.parent = obj.transform;
+                gameObject.transform.localScale = new Vector3(1 / obj.transform.localScale.x, 1 / obj.transform.localScale.y, 1 / obj.transform.localScale.z);
             }
         }
     }

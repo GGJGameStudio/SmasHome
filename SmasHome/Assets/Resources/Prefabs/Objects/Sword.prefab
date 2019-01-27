@@ -119,6 +119,7 @@ MonoBehaviour:
   Flying: 0
   Striking: 0
   Timer: 0
+  Mass: 2
   ThrowDamage: 1
   StrikeDamage: 2
   LifeTime: -1
