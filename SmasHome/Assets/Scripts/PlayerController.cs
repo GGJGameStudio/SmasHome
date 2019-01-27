@@ -329,7 +329,12 @@ public class PlayerController : MonoBehaviour
         if (pooTimer < 0 && CurrentPhase == PlayerPhase.BABY && Input.GetButton("Strike" + PlayerNumber))
         {
             pooTimer = 2f;
-            Instantiate(pooPrefab, transform.position, Quaternion.identity);
+
+            var pooPos = transform.position;
+            pooPos.x += rightdir ? -.5f : .5f;
+
+            var poo = Instantiate(pooPrefab, pooPos, Quaternion.identity) as GameObject;
+            poo.GetComponent<Rigidbody2D>().AddForce(new Vector2((rightdir ? -1 : 1) * 5, 5), ForceMode2D.Impulse);
         }
 
         //strike
