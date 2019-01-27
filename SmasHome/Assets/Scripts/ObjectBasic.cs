@@ -11,6 +11,7 @@ public class ObjectBasic : MonoBehaviour
     public bool Flying = false;
     [HideInInspector]
     public bool Striking = false;
+    [HideInInspector]
     public float Timer;
 
     public float ThrowDamage = 1;

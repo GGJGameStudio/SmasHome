@@ -431,4 +431,24 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(1f);
         Physics2D.IgnoreCollision(collider1, collider2, false);
     }
+
+    public void Reset()
+    {
+        //lâche l'objet
+        if (grabbed != null)
+        {
+            Debug.Log("lache");
+            grabbed.transform.parent = null;
+            grabbed.GetComponent<BoxCollider2D>().enabled = true;
+            grabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            grabbed.layer = LayerMask.NameToLayer("Object");
+            grabbed.GetComponent<ObjectBasic>().Throw(rightdir, throwTimer, 0);
+            grabbed.GetComponent<ObjectBasic>().Flying = true;
+            grabbed.GetComponent<ObjectBasic>().Owner = -1;
+            Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), grabbed.GetComponent<Collider2D>(), true);
+            StartCoroutine(EnableCollision(gameObject.GetComponent<BoxCollider2D>(), grabbed.GetComponent<Collider2D>()));
+            grabbed = null;
+            throwing = false;
+        }
+    }
 }

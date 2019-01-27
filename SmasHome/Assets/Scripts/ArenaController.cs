@@ -79,6 +79,12 @@ public class ArenaController : MonoBehaviour
 
     private void NewPhaseTransition()
     {
+        var players = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject player in players)
+        {
+            player.GetComponent<PlayerController>().Reset();
+        }
+
         var objects = GameObject.FindGameObjectsWithTag("Object");
         foreach (GameObject obj in objects)
         {
