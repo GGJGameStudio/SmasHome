@@ -8,6 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 1386464159352265886}
   - component: {fileID: 1386464159352265885}
   m_Layer: 13
@@ -396,6 +397,14 @@ GameObject:
   - component: {fileID: 6034299100144301668}
   - component: {fileID: 6737089526196767596}
   m_Layer: 13
+=======
+  - component: {fileID: 8689184856427931622}
+  - component: {fileID: 4060664545405515638}
+  - component: {fileID: 993143645746652330}
+  - component: {fileID: 3178496544014961590}
+  - component: {fileID: 2142534253116192906}
+  m_Layer: 16
+>>>>>>> 321c7aa583db1be81b0b6843310867323127c818
   m_Name: Poo
   m_TagString: Object
   m_Icon: {fileID: 0}
@@ -631,6 +640,7 @@ MonoBehaviour:
   StrikeDamage: 0
   LifeTime: 30
   Available: 0000000001000000020000000300000004000000
+<<<<<<< HEAD
   BubblePrefab: {fileID: 0}
   InfiniteObject: {fileID: 0}
   ExplodeOnHit: 0
@@ -639,3 +649,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5c572ff2f221b0940ad5c3f4126e98f6, type: 3}
   - {fileID: 8300000, guid: c9b27bce3766d9347bb1645b79dff74f, type: 3}
   - {fileID: 8300000, guid: cf68200036cb39e4aa390cb608343886, type: 3}
+=======
+  BubblePrefab: {fileID: 6578795510169116711, guid: e4e00e7668bf84247b87f666d5671002,
+    type: 3}
+  InfiniteObject: {fileID: 0}
+  ExplodeOnHit: 0
+  StickOnHit: 0
+>>>>>>> 321c7aa583db1be81b0b6843310867323127c818

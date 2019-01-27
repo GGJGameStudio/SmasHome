@@ -10,7 +10,11 @@ TagManager:
   - Canvas
   - Arena
   - Fondu
+<<<<<<< HEAD
   - Music
+=======
+  - Bubble
+>>>>>>> 321c7aa583db1be81b0b6843310867323127c818
   layers:
   - Default
   - TransparentFX
@@ -30,7 +34,7 @@ TagManager:
   - Grab
   - ObjectEnvironmentBack
   - Ghost
-  - 
+  - Bubble
   - 
   - 
   - 

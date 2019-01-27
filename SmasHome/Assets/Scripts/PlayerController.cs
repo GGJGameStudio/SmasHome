@@ -381,6 +381,9 @@ public class PlayerController : MonoBehaviour
 
             var poo = Instantiate(pooPrefab, pooPos, Quaternion.identity) as GameObject;
             poo.GetComponent<Rigidbody2D>().AddForce(new Vector2((rightdir ? -1 : 1) * 5, 5), ForceMode2D.Impulse);
+            poo.GetComponent<ObjectBasic>().Flying = true;
+            Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), poo.GetComponent<Collider2D>(), true);
+            StartCoroutine(EnableCollision(gameObject.GetComponent<Collider2D>(), poo.GetComponent<Collider2D>()));
         }
 
         //strike
@@ -423,7 +426,6 @@ public class PlayerController : MonoBehaviour
         else if (collision2D.gameObject.tag == "Object")
         {
             var obj = collision2D.gameObject.GetComponent<ObjectBasic>();
-            
             if (obj.Flying)
             {
                 obj.GetComponent<ObjectBasic>().ThrowHit(gameObject);
@@ -441,7 +443,7 @@ public class PlayerController : MonoBehaviour
             CurrentPhase = newphase;
             Speed = 1;
             JumpForce = 0;
-            ThrowForce = 1f;
+            ThrowForce = 0.5f;
             MaxCarryWeigth = 1f;
         }
         else if (Age < 10)
