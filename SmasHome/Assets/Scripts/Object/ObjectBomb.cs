@@ -35,7 +35,6 @@ public class ObjectBomb : ObjectBasic
 
             if (obj.tag == "Player")
             {
-                Debug.Log("ouch");
                 obj.GetComponent<PlayerController>().Age += ExplosionDamage;
             }
         }

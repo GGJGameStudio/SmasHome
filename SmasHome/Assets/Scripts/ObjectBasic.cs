@@ -26,6 +26,7 @@ public class ObjectBasic : MonoBehaviour
     public Object BubblePrefab;
     public Object InfiniteObject;
     public bool ExplodeOnHit;
+    public bool StickOnHit;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -167,10 +168,33 @@ public class ObjectBasic : MonoBehaviour
         var obj = col.collider.gameObject;
         if (obj.tag == "Floor" || obj.tag == "Player" || obj.tag == "Object")
         {
-            if (ExplodeOnHit)
+            if (ExplodeOnHit && Flying)
             {
                 Explode();
                 Destroy(gameObject);
+            }
+
+            if (StickOnHit && Flying)
+            {
+                var contact = col.contacts[0];
+                gameObject.transform.parent = obj.transform;
+                if (obj.tag == "Floor")
+                {
+                    gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+                } else
+                {
+                    gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+                    gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                    gameObject.GetComponent<Rigidbody2D>().angularVelocity = 0f;
+                }
+
+                gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Back";
+                gameObject.GetComponent<ObjectBasic>().Timer = 0f;
+                gameObject.layer = LayerMask.NameToLayer("ObjectBack");
+                var delta = gameObject.transform.position - new Vector3(contact.point.x, contact.point.y, gameObject.transform.position.z);
+                gameObject.transform.position = gameObject.transform.position - (delta * 0.5f);
+                var angle = Mathf.Atan2(delta.y, delta.x) * 180 / Mathf.PI;
+                gameObject.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, angle - 45 + 180));
             }
         }
     }

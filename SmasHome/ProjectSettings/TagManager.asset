@@ -47,6 +47,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Back
+    uniqueID: 929389687
+    locked: 0
   - name: EnvironmentBack
     uniqueID: 96194315
     locked: 0
@@ -61,4 +64,7 @@ TagManager:
     locked: 0
   - name: Object
     uniqueID: 3814443913
+    locked: 0
+  - name: Front
+    uniqueID: 2419888979
     locked: 0

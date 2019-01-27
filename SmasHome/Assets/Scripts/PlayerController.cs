@@ -263,6 +263,17 @@ public class PlayerController : MonoBehaviour
         {
             if (grabbed != null)
             {
+                //throw
+                for(int i = 0; i < grabbed.transform.childCount; i++)
+                {
+                    var child = grabbed.transform.GetChild(i).gameObject;
+                    child.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+                    child.GetComponent<ObjectBasic>().Flying = true;
+                    child.GetComponent<SpriteRenderer>().sortingLayerName = "Object";
+                    Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), child.GetComponent<Collider2D>(), true);
+                    StartCoroutine(EnableCollision(gameObject.GetComponent<Collider2D>(), child.GetComponent<Collider2D>()));
+                }
+                
                 grabbed.transform.parent = null;
                 grabbed.GetComponent<Collider2D>().enabled = true;
                 grabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
@@ -299,6 +310,7 @@ public class PlayerController : MonoBehaviour
                     grabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
                     grabbed.GetComponent<ObjectBasic>().Owner = PlayerNumber;
                     grabbed.GetComponent<ObjectBasic>().Timer = 0f;
+                    grabbed.GetComponent<SpriteRenderer>().sortingLayerName = "Object";
                 }
             }
             else
