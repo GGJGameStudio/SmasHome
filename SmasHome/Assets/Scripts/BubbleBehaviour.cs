@@ -1,5 +1,4 @@
-﻿using DigitalRuby.Tween;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,7 +11,7 @@ public class BubbleBehaviour : MonoBehaviour
     {
         this.GetComponent<SpriteRenderer>().enabled = true;
 
-        StartCoroutine("FadeIn");
+        StartCoroutine(FadeIn());
     }
 
     private IEnumerator FadeIn()
