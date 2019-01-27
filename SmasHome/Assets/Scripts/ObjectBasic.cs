@@ -33,8 +33,6 @@ public class ObjectBasic : MonoBehaviour
     protected virtual void Start()
     {
         Owner = -1;
-        Flying = false;
-        Striking = false;
         Timer = 0f;
         
         startPosition = transform.position;
