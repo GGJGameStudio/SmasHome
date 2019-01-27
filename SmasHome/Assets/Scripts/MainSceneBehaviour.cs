@@ -43,49 +43,50 @@ public class MainSceneBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!pressStartLabel.activeSelf && (Input.GetButtonUp("Start1") || Input.GetButtonUp("Start2")))
+        if (!outScene)
         {
-            Global.NbPlayers = int.Parse(CurrentNbPlayerLabelSelected.name.Substring(0, 1));
-            StartCoroutine(ChangeScene());
-            //var houseScene = SceneManager.GetSceneAt(1);
-            //SceneManager.SetActiveScene(houseScene);
-        }
+            if (!pressStartLabel.activeSelf && (Input.GetButtonUp("Start1") || Input.GetButtonUp("Start2") || Input.GetButtonUp("Start3") || Input.GetButtonUp("Start4")))
+            {
+                Global.NbPlayers = int.Parse(CurrentNbPlayerLabelSelected.name.Substring(0, 1));
+                outScene = true;
+                StartCoroutine(ChangeScene());
+            }
 
-        if (pressStartLabel.activeSelf && (Input.GetButtonUp("Start1") || Input.GetButtonUp("Start2")))
-        {
-            pressStartLabel.SetActive(false);
-            CurrentNbPlayerLabelSelected.SetActive(true);
+            if (pressStartLabel.activeSelf && (Input.GetButtonUp("Start1") || Input.GetButtonUp("Start2") || Input.GetButtonUp("Start3") || Input.GetButtonUp("Start4")))
+            {
+                pressStartLabel.SetActive(false);
+                CurrentNbPlayerLabelSelected.SetActive(true);
 
-            var axis = Input.GetAxis("Horizontal2");
-           
-        }
+                var axis = Input.GetAxis("Horizontal2");
 
-        if (!pressStartLabel.activeSelf && !lockHorizontal && (Input.GetAxis("Horizontal1") > 0 || Input.GetAxis("Horizontal2") > 0))
-        {
-            CurrentNbPlayerLabelSelected.SetActive(false);
-            currentLabel = Mathf.Min(nbPlayersLabel.Length - 1, currentLabel + 1);
-            CurrentNbPlayerLabelSelected.SetActive(true);
-            lockHorizontal = true;
-        }
+            }
 
-        if (!pressStartLabel.activeSelf && !lockHorizontal && (Input.GetAxis("Horizontal1") < 0 || Input.GetAxis("Horizontal2") < 0))
-        {
-            CurrentNbPlayerLabelSelected.SetActive(false);
-            currentLabel = Mathf.Max(0, currentLabel - 1);
-            CurrentNbPlayerLabelSelected.SetActive(true);
+            if (!pressStartLabel.activeSelf && !lockHorizontal && (Input.GetAxis("Horizontal1") > 0 || Input.GetAxis("Horizontal2") > 0 || Input.GetAxis("Horizontal3") > 0 || Input.GetAxis("Horizontal4") > 0))
+            {
+                CurrentNbPlayerLabelSelected.SetActive(false);
+                currentLabel = Mathf.Min(nbPlayersLabel.Length - 1, currentLabel + 1);
+                CurrentNbPlayerLabelSelected.SetActive(true);
+                lockHorizontal = true;
+            }
 
-            lockHorizontal = true;
-        }
+            if (!pressStartLabel.activeSelf && !lockHorizontal && (Input.GetAxis("Horizontal1") < 0 || Input.GetAxis("Horizontal2") < 0 || Input.GetAxis("Horizontal3") > 0 || Input.GetAxis("Horizontal4") > 0))
+            {
+                CurrentNbPlayerLabelSelected.SetActive(false);
+                currentLabel = Mathf.Max(0, currentLabel - 1);
+                CurrentNbPlayerLabelSelected.SetActive(true);
 
-        if (lockHorizontal && Input.GetAxis("Horizontal1") == 0 && Input.GetAxis("Horizontal2") == 0)
-        {
-            lockHorizontal = false;
+                lockHorizontal = true;
+            }
+
+            if (lockHorizontal && Input.GetAxis("Horizontal1") == 0 && Input.GetAxis("Horizontal2") == 0 || Input.GetAxis("Horizontal3") > 0 || Input.GetAxis("Horizontal4") > 0)
+            {
+                lockHorizontal = false;
+            }
         }
     }
 
     private IEnumerator ChangeScene()
     {
-        outScene = true;
         yield return new WaitForSeconds(2.5f);
 
         SceneManager.LoadScene(1);
