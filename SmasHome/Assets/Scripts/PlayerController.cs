@@ -173,6 +173,8 @@ public class PlayerController : MonoBehaviour
         throwTimer = 0f;
         throwing = false;
         ThrowForce = 1f;
+
+        spriteRenderer.material.SetFloat("_IsBackground", 1.0f);
     }
 
     // Update is called once per frame
@@ -224,17 +226,17 @@ public class PlayerController : MonoBehaviour
 
         //changement de plan
         var vertical = Input.GetAxis("Vertical" + PlayerNumber);
-        if (vertical != 0)
+        if (vertical != 0 && CurrentPhase != PlayerPhase.BABY)
         {
             if (vertical > 0.9)
             {
                 front = false;
-                this.GetComponent<SpriteRenderer>().material.SetFloat("_IsBackground", 1.0f);
+                spriteRenderer.material.SetFloat("_IsBackground", 1.0f);
             }
             if (vertical < -0.9)
             {
                 front = true;
-                this.GetComponent<SpriteRenderer>().material.SetFloat("_IsBackground", 0.0f);
+                spriteRenderer.material.SetFloat("_IsBackground", 0.0f);
             }
         }
 
