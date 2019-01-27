@@ -164,7 +164,6 @@ public class ObjectBasic : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log("trigger");
         if (col.gameObject.tag == "Grab")
         {
             col.gameObject.GetComponent<Grab>().CanGrab.Add(gameObject);
@@ -172,7 +171,6 @@ public class ObjectBasic : MonoBehaviour
 
         if (col.gameObject.tag == "Player" && Striking && col.gameObject.GetComponent<PlayerController>().PlayerNumber != Owner)
         {
-            Debug.Log("hit");
             StrikeHit(col.gameObject);
         }
     }
@@ -218,7 +216,6 @@ public class ObjectBasic : MonoBehaviour
                 var angle = Mathf.Atan2(delta.y, delta.x) * 180 / Mathf.PI;
                 gameObject.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, angle - 45 + 180));
                 gameObject.transform.parent = obj.transform;
-                gameObject.transform.localScale = new Vector3(1 / obj.transform.localScale.x, 1 / obj.transform.localScale.y, 1 / obj.transform.localScale.z);
             }
         }
     }
