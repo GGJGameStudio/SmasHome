@@ -90,9 +90,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 77
-        height: 45
+        y: 45.5
+        width: 68
+        height: 45.5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -100,7 +100,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1f2d063e86054e448a936347b10a9dd
+      spriteID: 0daf7418697c4004ebd90409564e15b3
       vertices: []
       indices: 
       edges: []
@@ -109,10 +109,10 @@ TextureImporter:
       name: CAT_Throw_1
       rect:
         serializedVersion: 2
-        x: 77
-        y: 0
-        width: 77
-        height: 45
+        x: 0
+        y: 0.5
+        width: 68
+        height: 45.5
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,7 +120,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb5d83e738774c1489d159499e96a6b0
+      spriteID: 745438f0db12b59439bd5d7c3a0a2aab
       vertices: []
       indices: 
       edges: []
