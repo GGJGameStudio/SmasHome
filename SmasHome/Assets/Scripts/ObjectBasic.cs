@@ -72,9 +72,8 @@ public class ObjectBasic : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-
-
-        PostUpdate();
+        
+        PostUpdate(Time.deltaTime);
     }
 
     public void Reset()
@@ -157,7 +156,7 @@ public class ObjectBasic : MonoBehaviour
         //rien
     }
 
-    public virtual void PostUpdate()
+    public virtual void PostUpdate(float deltaTime)
     {
         //rien
     }
