@@ -7,6 +7,11 @@ public class BimBubbleBehaviour : BasicBubbleBehaviour
 {
     public AnimationCurve curve;
 
+    private void Start()
+    {
+        transform.localScale = new Vector3(0, 0, 0);
+    }
+
     public override void Pop()
     {
         this.GetComponent<SpriteRenderer>().enabled = true;
