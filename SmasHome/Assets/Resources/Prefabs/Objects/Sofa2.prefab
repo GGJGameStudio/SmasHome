@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 408552471392162250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -116,18 +116,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.017995358, y: -0.0017954111}
+  m_Offset: {x: 0.00973779, y: 0.014719605}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.39, y: 2.09}
+    oldSize: {x: 2.195, y: 1.045}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.4789762, y: 2.0928795}
+  m_Size: {x: 2.2163987, y: 1.0359085}
   m_EdgeRadius: 0
 --- !u!114 &7042735705288038040
 MonoBehaviour:
@@ -145,7 +145,12 @@ MonoBehaviour:
   Flying: 0
   Striking: 0
   Timer: 0
+  Mass: 1
   ThrowDamage: 1
   StrikeDamage: 2
   LifeTime: -1
-  Available: 
+  Available: 0000000001000000020000000300000004000000
+  BubblePrefab: {fileID: 0}
+  InfiniteObject: {fileID: 0}
+  ExplodeOnHit: 0
+  StickOnHit: 0

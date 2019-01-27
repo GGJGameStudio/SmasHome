@@ -210,6 +210,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
+    - target: {fileID: 39929745451697130, guid: ea3194199e6939f468cb97a5459d9f51,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 6578795510169116711, guid: e4e00e7668bf84247b87f666d5671002,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea3194199e6939f468cb97a5459d9f51, type: 3}
 --- !u!4 &13893755 stripped
@@ -316,6 +322,27 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
+    - target: {fileID: 1071141339357952860, guid: e76c35357c0f2534cb466d6e227fdf76,
+        type: 3}
+      propertyPath: Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071141339357952860, guid: e76c35357c0f2534cb466d6e227fdf76,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071141339357952860, guid: e76c35357c0f2534cb466d6e227fdf76,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1071141339357952860, guid: e76c35357c0f2534cb466d6e227fdf76,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 6578795510169116711, guid: e4e00e7668bf84247b87f666d5671002,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e76c35357c0f2534cb466d6e227fdf76, type: 3}
 --- !u!4 &31204702 stripped
@@ -419,6 +446,27 @@ PrefabInstance:
     - target: {fileID: 8666820651334676068, guid: b6d4b440e4abed74ebc22b0d7e8e90c9,
         type: 3}
       propertyPath: BubblePrebab
+      value: 
+      objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
+        type: 3}
+    - target: {fileID: 8666820651334676068, guid: b6d4b440e4abed74ebc22b0d7e8e90c9,
+        type: 3}
+      propertyPath: Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666820651334676068, guid: b6d4b440e4abed74ebc22b0d7e8e90c9,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666820651334676068, guid: b6d4b440e4abed74ebc22b0d7e8e90c9,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8666820651334676068, guid: b6d4b440e4abed74ebc22b0d7e8e90c9,
+        type: 3}
+      propertyPath: BubblePrefab
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
@@ -606,6 +654,27 @@ PrefabInstance:
       propertyPath: BubblePrebab
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
+        type: 3}
+    - target: {fileID: 1905220541931667577, guid: 0f6ae9e974f00ba408c0df138ba845ef,
+        type: 3}
+      propertyPath: Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905220541931667577, guid: 0f6ae9e974f00ba408c0df138ba845ef,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905220541931667577, guid: 0f6ae9e974f00ba408c0df138ba845ef,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905220541931667577, guid: 0f6ae9e974f00ba408c0df138ba845ef,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 7334009911922147141, guid: f5ff63d8af10d5e48a4197fb2679c8e4,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f6ae9e974f00ba408c0df138ba845ef, type: 3}
@@ -872,7 +941,7 @@ PrefabInstance:
     - target: {fileID: 6517363684773858978, guid: aed51d187886ff34982c263f19713252,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.03
+      value: -0.59
       objectReference: {fileID: 0}
     - target: {fileID: 6517363684773858978, guid: aed51d187886ff34982c263f19713252,
         type: 3}
@@ -1035,6 +1104,27 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
+    - target: {fileID: 5828365586878692076, guid: 8b5bb9410e537da45a9083facfec52f2,
+        type: 3}
+      propertyPath: Mass
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828365586878692076, guid: 8b5bb9410e537da45a9083facfec52f2,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828365586878692076, guid: 8b5bb9410e537da45a9083facfec52f2,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5828365586878692076, guid: 8b5bb9410e537da45a9083facfec52f2,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 8408753350403061540, guid: f77ccfcd7e117874eb23202748a28ad4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b5bb9410e537da45a9083facfec52f2, type: 3}
 --- !u!4 &296804916 stripped
@@ -1063,7 +1153,7 @@ PrefabInstance:
     - target: {fileID: 3208475870514742032, guid: 4c88d2aee182e714f8a4edf6b4faaae0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.51
+      value: -1.56
       objectReference: {fileID: 0}
     - target: {fileID: 3208475870514742032, guid: 4c88d2aee182e714f8a4edf6b4faaae0,
         type: 3}
@@ -1115,6 +1205,27 @@ PrefabInstance:
       propertyPath: BubblePrebab
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
+        type: 3}
+    - target: {fileID: 5108392722092359553, guid: 4c88d2aee182e714f8a4edf6b4faaae0,
+        type: 3}
+      propertyPath: Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108392722092359553, guid: 4c88d2aee182e714f8a4edf6b4faaae0,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108392722092359553, guid: 4c88d2aee182e714f8a4edf6b4faaae0,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5108392722092359553, guid: 4c88d2aee182e714f8a4edf6b4faaae0,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 2025199740567772217, guid: 62671cfadd34a1347b3468323dbf214a,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c88d2aee182e714f8a4edf6b4faaae0, type: 3}
@@ -1216,6 +1327,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
+    - target: {fileID: 3139190629049981862, guid: 647b77cf576a87b42b28d3eac34186f6,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 1796779604801176814, guid: ffc93d5de90ab8640a4ad4181d5bf022,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 647b77cf576a87b42b28d3eac34186f6, type: 3}
 --- !u!4 &316818587 stripped
@@ -1244,7 +1361,7 @@ PrefabInstance:
     - target: {fileID: 7597703794992469286, guid: 2f4a1bacb897dc248a358a232b0effaf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.652
+      value: -2.82
       objectReference: {fileID: 0}
     - target: {fileID: 7597703794992469286, guid: 2f4a1bacb897dc248a358a232b0effaf,
         type: 3}
@@ -1331,6 +1448,27 @@ PrefabInstance:
       propertyPath: BubblePrebab
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
+        type: 3}
+    - target: {fileID: 559223063058817859, guid: 2f4a1bacb897dc248a358a232b0effaf,
+        type: 3}
+      propertyPath: Mass
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 559223063058817859, guid: 2f4a1bacb897dc248a358a232b0effaf,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 559223063058817859, guid: 2f4a1bacb897dc248a358a232b0effaf,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 559223063058817859, guid: 2f4a1bacb897dc248a358a232b0effaf,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 2025199740567772217, guid: 62671cfadd34a1347b3468323dbf214a,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f4a1bacb897dc248a358a232b0effaf, type: 3}
@@ -1438,6 +1576,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
+    - target: {fileID: 7819744238289691745, guid: 453ed1e1a44651645a9667a0150b86ee,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819744238289691745, guid: 453ed1e1a44651645a9667a0150b86ee,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 2025199740567772217, guid: 62671cfadd34a1347b3468323dbf214a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 453ed1e1a44651645a9667a0150b86ee, type: 3}
 --- !u!4 &351706709 stripped
@@ -1544,6 +1693,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
+    - target: {fileID: 8091973109690704960, guid: 48252160a4664f94f93100e546490e3a,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 8408753350403061540, guid: f77ccfcd7e117874eb23202748a28ad4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 48252160a4664f94f93100e546490e3a, type: 3}
 --- !u!4 &436343249 stripped
@@ -1624,6 +1779,27 @@ PrefabInstance:
       propertyPath: BubblePrebab
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
+        type: 3}
+    - target: {fileID: 584415213500552945, guid: 3d672c85301cc794185580099ba2e16d,
+        type: 3}
+      propertyPath: Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 584415213500552945, guid: 3d672c85301cc794185580099ba2e16d,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 584415213500552945, guid: 3d672c85301cc794185580099ba2e16d,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 584415213500552945, guid: 3d672c85301cc794185580099ba2e16d,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 2025199740567772217, guid: 62671cfadd34a1347b3468323dbf214a,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3d672c85301cc794185580099ba2e16d, type: 3}
@@ -1713,6 +1889,11 @@ PrefabInstance:
         type: 3}
       propertyPath: PlayerNumber
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4048967559217272036, guid: 3056ed9a8e17d68438132ce8eff27a56,
+        type: 3}
+      propertyPath: Speed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3056ed9a8e17d68438132ce8eff27a56, type: 3}
@@ -1820,6 +2001,27 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
+    - target: {fileID: 9115804771685133418, guid: 1ac00360473fd5042a2ea523b350ba30,
+        type: 3}
+      propertyPath: Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115804771685133418, guid: 1ac00360473fd5042a2ea523b350ba30,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115804771685133418, guid: 1ac00360473fd5042a2ea523b350ba30,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9115804771685133418, guid: 1ac00360473fd5042a2ea523b350ba30,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ac00360473fd5042a2ea523b350ba30, type: 3}
 --- !u!4 &458685813 stripped
@@ -1900,6 +2102,12 @@ PrefabInstance:
       propertyPath: BubblePrebab
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
+        type: 3}
+    - target: {fileID: 5887367948574651001, guid: 7f263fc3e73f4594d8c5ffd6bb714c6a,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 7334009911922147141, guid: f5ff63d8af10d5e48a4197fb2679c8e4,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f263fc3e73f4594d8c5ffd6bb714c6a, type: 3}
@@ -2001,6 +2209,27 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
+    - target: {fileID: 2292329567643285075, guid: eeb014caac3b0c445b7c47df77a616be,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2292329567643285075, guid: eeb014caac3b0c445b7c47df77a616be,
+        type: 3}
+      propertyPath: Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2292329567643285075, guid: eeb014caac3b0c445b7c47df77a616be,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2292329567643285075, guid: eeb014caac3b0c445b7c47df77a616be,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eeb014caac3b0c445b7c47df77a616be, type: 3}
 --- !u!4 &487861460 stripped
@@ -2082,6 +2311,27 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
+    - target: {fileID: 6653440492043500494, guid: 1d47170b88413d24395fae9b215ec568,
+        type: 3}
+      propertyPath: Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653440492043500494, guid: 1d47170b88413d24395fae9b215ec568,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653440492043500494, guid: 1d47170b88413d24395fae9b215ec568,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653440492043500494, guid: 1d47170b88413d24395fae9b215ec568,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 8408753350403061540, guid: f77ccfcd7e117874eb23202748a28ad4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d47170b88413d24395fae9b215ec568, type: 3}
 --- !u!1 &509181345
@@ -2157,7 +2407,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509181345}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.44, y: -1.3, z: 0}
+  m_LocalPosition: {x: -4.44, y: -1.87, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 810737387}
@@ -2260,6 +2510,27 @@ PrefabInstance:
       propertyPath: BubblePrebab
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
+        type: 3}
+    - target: {fileID: 2030007527008600552, guid: a900b75e899e2e84089849a5f4255986,
+        type: 3}
+      propertyPath: Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2030007527008600552, guid: a900b75e899e2e84089849a5f4255986,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2030007527008600552, guid: a900b75e899e2e84089849a5f4255986,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2030007527008600552, guid: a900b75e899e2e84089849a5f4255986,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 1796779604801176814, guid: ffc93d5de90ab8640a4ad4181d5bf022,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a900b75e899e2e84089849a5f4255986, type: 3}
@@ -2769,6 +3040,27 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
+    - target: {fileID: 920674587708123815, guid: 0b7d234a5502141458571b812f81329b,
+        type: 3}
+      propertyPath: Mass
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 920674587708123815, guid: 0b7d234a5502141458571b812f81329b,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 920674587708123815, guid: 0b7d234a5502141458571b812f81329b,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 920674587708123815, guid: 0b7d234a5502141458571b812f81329b,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 2025199740567772217, guid: 62671cfadd34a1347b3468323dbf214a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0b7d234a5502141458571b812f81329b, type: 3}
 --- !u!4 &642920192 stripped
@@ -2798,12 +3090,12 @@ PrefabInstance:
     - target: {fileID: 6141697877683633147, guid: f6d85d705ffb8b447b2d81e785b68877,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.87
+      value: -2.72
       objectReference: {fileID: 0}
     - target: {fileID: 6141697877683633147, guid: f6d85d705ffb8b447b2d81e785b68877,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.022
+      value: 6.07
       objectReference: {fileID: 0}
     - target: {fileID: 6141697877683633147, guid: f6d85d705ffb8b447b2d81e785b68877,
         type: 3}
@@ -2880,6 +3172,27 @@ PrefabInstance:
       propertyPath: BubblePrebab
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
+        type: 3}
+    - target: {fileID: 9050230244436480781, guid: f6d85d705ffb8b447b2d81e785b68877,
+        type: 3}
+      propertyPath: Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050230244436480781, guid: f6d85d705ffb8b447b2d81e785b68877,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050230244436480781, guid: f6d85d705ffb8b447b2d81e785b68877,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9050230244436480781, guid: f6d85d705ffb8b447b2d81e785b68877,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 6578795510169116711, guid: e4e00e7668bf84247b87f666d5671002,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6d85d705ffb8b447b2d81e785b68877, type: 3}
@@ -3533,6 +3846,27 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
+    - target: {fileID: 6963797552882562551, guid: 49424ba0363d6c04cb9cb2019ad6bbcb,
+        type: 3}
+      propertyPath: Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963797552882562551, guid: 49424ba0363d6c04cb9cb2019ad6bbcb,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963797552882562551, guid: 49424ba0363d6c04cb9cb2019ad6bbcb,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6963797552882562551, guid: 49424ba0363d6c04cb9cb2019ad6bbcb,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 7334009911922147141, guid: f5ff63d8af10d5e48a4197fb2679c8e4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49424ba0363d6c04cb9cb2019ad6bbcb, type: 3}
 --- !u!1001 &883555434
@@ -3593,9 +3927,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4391549390626509660, guid: 7d3da4b9d933b174880b658122ac8ddb,
         type: 3}
-      propertyPath: BubblePrebab
+      propertyPath: Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391549390626509660, guid: 7d3da4b9d933b174880b658122ac8ddb,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391549390626509660, guid: 7d3da4b9d933b174880b658122ac8ddb,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391549390626509660, guid: 7d3da4b9d933b174880b658122ac8ddb,
+        type: 3}
+      propertyPath: BubblePrefab
       value: 
-      objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
+      objectReference: {fileID: 1796779604801176814, guid: ffc93d5de90ab8640a4ad4181d5bf022,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d3da4b9d933b174880b658122ac8ddb, type: 3}
@@ -3616,6 +3965,7 @@ GameObject:
   - component: {fileID: 889677637}
   - component: {fileID: 889677636}
   - component: {fileID: 889677635}
+  - component: {fileID: 889677638}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3687,6 +4037,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &889677638
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889677634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d0de586ba9060a4dada549ff2111399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RapportMinMaxSize: 3
 --- !u!1001 &984072071
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3782,6 +4145,12 @@ PrefabInstance:
     - target: {fileID: 7937803175439485351, guid: 8f376328afb5e6c4ab667d2d52668446,
         type: 3}
       propertyPath: BubblePrebab
+      value: 
+      objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
+        type: 3}
+    - target: {fileID: 7937803175439485351, guid: 8f376328afb5e6c4ab667d2d52668446,
+        type: 3}
+      propertyPath: BubblePrefab
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
@@ -3890,6 +4259,27 @@ PrefabInstance:
       propertyPath: BubblePrebab
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
+        type: 3}
+    - target: {fileID: 7108206978074769253, guid: 450b795ea56c226439ed7df7fd3a2b54,
+        type: 3}
+      propertyPath: Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7108206978074769253, guid: 450b795ea56c226439ed7df7fd3a2b54,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7108206978074769253, guid: 450b795ea56c226439ed7df7fd3a2b54,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7108206978074769253, guid: 450b795ea56c226439ed7df7fd3a2b54,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 8408753350403061540, guid: f77ccfcd7e117874eb23202748a28ad4,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 450b795ea56c226439ed7df7fd3a2b54, type: 3}
@@ -4234,6 +4624,27 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
+    - target: {fileID: 2146868200058062249, guid: 4ab1ea721030add49a778c09593b49d4,
+        type: 3}
+      propertyPath: Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146868200058062249, guid: 4ab1ea721030add49a778c09593b49d4,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146868200058062249, guid: 4ab1ea721030add49a778c09593b49d4,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146868200058062249, guid: 4ab1ea721030add49a778c09593b49d4,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 8408753350403061540, guid: f77ccfcd7e117874eb23202748a28ad4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ab1ea721030add49a778c09593b49d4, type: 3}
 --- !u!4 &1102792379 stripped
@@ -4336,12 +4747,12 @@ PrefabInstance:
     - target: {fileID: 4048967559217271962, guid: 3056ed9a8e17d68438132ce8eff27a56,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.42
+      value: -0.11
       objectReference: {fileID: 0}
     - target: {fileID: 4048967559217271962, guid: 3056ed9a8e17d68438132ce8eff27a56,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.17
+      value: -0.87
       objectReference: {fileID: 0}
     - target: {fileID: 4048967559217271962, guid: 3056ed9a8e17d68438132ce8eff27a56,
         type: 3}
@@ -4509,6 +4920,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
+    - target: {fileID: 8437945398143199065, guid: 7d1ca3e97aa1f034899c57f0c93d489a,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 7334009911922147141, guid: f5ff63d8af10d5e48a4197fb2679c8e4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d1ca3e97aa1f034899c57f0c93d489a, type: 3}
 --- !u!4 &1175639265 stripped
@@ -4615,6 +5032,27 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
+    - target: {fileID: 1794015177807757463, guid: 51ef8370657c81f4282b11135896ea38,
+        type: 3}
+      propertyPath: Mass
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1794015177807757463, guid: 51ef8370657c81f4282b11135896ea38,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1794015177807757463, guid: 51ef8370657c81f4282b11135896ea38,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1794015177807757463, guid: 51ef8370657c81f4282b11135896ea38,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 2025199740567772217, guid: 62671cfadd34a1347b3468323dbf214a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51ef8370657c81f4282b11135896ea38, type: 3}
 --- !u!4 &1261829547 stripped
@@ -4638,12 +5076,12 @@ PrefabInstance:
     - target: {fileID: 6517363684773858978, guid: aed51d187886ff34982c263f19713252,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.08
+      value: -1.75
       objectReference: {fileID: 0}
     - target: {fileID: 6517363684773858978, guid: aed51d187886ff34982c263f19713252,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.05
+      value: -0.59
       objectReference: {fileID: 0}
     - target: {fileID: 6517363684773858978, guid: aed51d187886ff34982c263f19713252,
         type: 3}
@@ -4796,6 +5234,27 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
+    - target: {fileID: 3661043820950693304, guid: 87390799260a7bf40915e79acaf69507,
+        type: 3}
+      propertyPath: Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3661043820950693304, guid: 87390799260a7bf40915e79acaf69507,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3661043820950693304, guid: 87390799260a7bf40915e79acaf69507,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3661043820950693304, guid: 87390799260a7bf40915e79acaf69507,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 1796779604801176814, guid: ffc93d5de90ab8640a4ad4181d5bf022,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87390799260a7bf40915e79acaf69507, type: 3}
 --- !u!4 &1304928801 stripped
@@ -4902,6 +5361,27 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
+    - target: {fileID: 9106654172583149304, guid: a89579ee01539c04685de60ac2680450,
+        type: 3}
+      propertyPath: Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106654172583149304, guid: a89579ee01539c04685de60ac2680450,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106654172583149304, guid: a89579ee01539c04685de60ac2680450,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106654172583149304, guid: a89579ee01539c04685de60ac2680450,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 7334009911922147141, guid: f5ff63d8af10d5e48a4197fb2679c8e4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a89579ee01539c04685de60ac2680450, type: 3}
 --- !u!4 &1343274611 stripped
@@ -4925,12 +5405,12 @@ PrefabInstance:
     - target: {fileID: 6876233910044820206, guid: 1e7f49f8e69c321408969aed665e6d42,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.205
+      value: -1.78
       objectReference: {fileID: 0}
     - target: {fileID: 6876233910044820206, guid: 1e7f49f8e69c321408969aed665e6d42,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.14432418
+      value: -3.09
       objectReference: {fileID: 0}
     - target: {fileID: 6876233910044820206, guid: 1e7f49f8e69c321408969aed665e6d42,
         type: 3}
@@ -4979,34 +5459,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4223433837120181845, guid: 1e7f49f8e69c321408969aed665e6d42,
         type: 3}
-      propertyPath: Available.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4223433837120181845, guid: 1e7f49f8e69c321408969aed665e6d42,
-        type: 3}
-      propertyPath: Available.Array.data[1]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4223433837120181845, guid: 1e7f49f8e69c321408969aed665e6d42,
-        type: 3}
-      propertyPath: Available.Array.data[2]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4223433837120181845, guid: 1e7f49f8e69c321408969aed665e6d42,
-        type: 3}
-      propertyPath: Available.Array.data[3]
+      propertyPath: StrikeDamage
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4223433837120181845, guid: 1e7f49f8e69c321408969aed665e6d42,
         type: 3}
-      propertyPath: Available.Array.data[4]
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4223433837120181845, guid: 1e7f49f8e69c321408969aed665e6d42,
-        type: 3}
-      propertyPath: BubblePrebab
+      propertyPath: BubblePrefab
       value: 
-      objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
+      objectReference: {fileID: 7334009911922147141, guid: f5ff63d8af10d5e48a4197fb2679c8e4,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e7f49f8e69c321408969aed665e6d42, type: 3}
@@ -5031,7 +5491,7 @@ PrefabInstance:
     - target: {fileID: 7073823802935955087, guid: c6f61bac8d0fcf1459b5315ed13d9654,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.666
+      value: -2.8
       objectReference: {fileID: 0}
     - target: {fileID: 7073823802935955087, guid: c6f61bac8d0fcf1459b5315ed13d9654,
         type: 3}
@@ -5114,6 +5574,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
+    - target: {fileID: 3892362689852387247, guid: c6f61bac8d0fcf1459b5315ed13d9654,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3892362689852387247, guid: c6f61bac8d0fcf1459b5315ed13d9654,
+        type: 3}
+      propertyPath: Mass
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3892362689852387247, guid: c6f61bac8d0fcf1459b5315ed13d9654,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 7334009911922147141, guid: f5ff63d8af10d5e48a4197fb2679c8e4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6f61bac8d0fcf1459b5315ed13d9654, type: 3}
 --- !u!4 &1389752140 stripped
@@ -5137,12 +5613,12 @@ PrefabInstance:
     - target: {fileID: 129409326929085895, guid: 0a9472fc676afdf48b8522f15f2a7f99,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.66
+      value: -1.38
       objectReference: {fileID: 0}
     - target: {fileID: 129409326929085895, guid: 0a9472fc676afdf48b8522f15f2a7f99,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.1
+      value: 3.66
       objectReference: {fileID: 0}
     - target: {fileID: 129409326929085895, guid: 0a9472fc676afdf48b8522f15f2a7f99,
         type: 3}
@@ -5194,6 +5670,27 @@ PrefabInstance:
       propertyPath: BubblePrebab
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
+        type: 3}
+    - target: {fileID: 5205720722381265876, guid: 0a9472fc676afdf48b8522f15f2a7f99,
+        type: 3}
+      propertyPath: Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5205720722381265876, guid: 0a9472fc676afdf48b8522f15f2a7f99,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5205720722381265876, guid: 0a9472fc676afdf48b8522f15f2a7f99,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5205720722381265876, guid: 0a9472fc676afdf48b8522f15f2a7f99,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 1796779604801176814, guid: ffc93d5de90ab8640a4ad4181d5bf022,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0a9472fc676afdf48b8522f15f2a7f99, type: 3}
@@ -5294,6 +5791,12 @@ PrefabInstance:
       propertyPath: BubblePrebab
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
+        type: 3}
+    - target: {fileID: 8508262610297083088, guid: 07fdac859ef82854b94d3eb856a00697,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 1796779604801176814, guid: ffc93d5de90ab8640a4ad4181d5bf022,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07fdac859ef82854b94d3eb856a00697, type: 3}
@@ -5401,6 +5904,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
+    - target: {fileID: 8347111753879846448, guid: fd70f3cb87655a44ea83eb3f70dff4ef,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 6578795510169116711, guid: e4e00e7668bf84247b87f666d5671002,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd70f3cb87655a44ea83eb3f70dff4ef, type: 3}
 --- !u!4 &1485544900 stripped
@@ -5461,7 +5970,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2091692555
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 70b3218f5308f2c4383775dd4c88026a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -5578,12 +6087,12 @@ PrefabInstance:
     - target: {fileID: 8266294363448379619, guid: 7e109f9776cd143419393e14df734b22,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.95
+      value: -1.85
       objectReference: {fileID: 0}
     - target: {fileID: 8266294363448379619, guid: 7e109f9776cd143419393e14df734b22,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.95
+      value: 5.98
       objectReference: {fileID: 0}
     - target: {fileID: 8266294363448379619, guid: 7e109f9776cd143419393e14df734b22,
         type: 3}
@@ -5660,6 +6169,12 @@ PrefabInstance:
       propertyPath: BubblePrebab
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
+        type: 3}
+    - target: {fileID: 42055370971686301, guid: 7e109f9776cd143419393e14df734b22,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 1796779604801176814, guid: ffc93d5de90ab8640a4ad4181d5bf022,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e109f9776cd143419393e14df734b22, type: 3}
@@ -5846,6 +6361,27 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
+    - target: {fileID: 3658853953242068656, guid: 05684042bc0f25f489ce726f5b99edac,
+        type: 3}
+      propertyPath: Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3658853953242068656, guid: 05684042bc0f25f489ce726f5b99edac,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3658853953242068656, guid: 05684042bc0f25f489ce726f5b99edac,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3658853953242068656, guid: 05684042bc0f25f489ce726f5b99edac,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05684042bc0f25f489ce726f5b99edac, type: 3}
 --- !u!4 &1649543448 stripped
@@ -5880,7 +6416,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1663180134}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.81, y: -0.729, z: 0}
+  m_LocalPosition: {x: -2.81, y: -1.069, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 648778051}
@@ -5899,7 +6435,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.7254226, y: 0}
+  m_Offset: {x: 1.3231902, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5910,7 +6446,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.6999521, y: 0.14}
+  m_Size: {x: 3.8954873, y: 0.14}
   m_EdgeRadius: 0
 --- !u!50 &1663180137
 Rigidbody2D:
@@ -6031,6 +6567,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
+    - target: {fileID: 4803215422733461477, guid: 4c49085c00629d04689e4c03fe5b42f4,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 8408753350403061540, guid: f77ccfcd7e117874eb23202748a28ad4,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c49085c00629d04689e4c03fe5b42f4, type: 3}
 --- !u!4 &1713143661 stripped
@@ -6137,6 +6679,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
+    - target: {fileID: 8852016527260908258, guid: 38f44864985f2e94f8cb8e02247d4663,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 6578795510169116711, guid: e4e00e7668bf84247b87f666d5671002,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38f44864985f2e94f8cb8e02247d4663, type: 3}
 --- !u!4 &1725976103 stripped
@@ -6160,12 +6708,12 @@ PrefabInstance:
     - target: {fileID: 5413937209288416303, guid: 79dcda81f62c3214ab4af5d787dc2c9e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.03
+      value: -1.79
       objectReference: {fileID: 0}
     - target: {fileID: 5413937209288416303, guid: 79dcda81f62c3214ab4af5d787dc2c9e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.12
+      value: 6.56
       objectReference: {fileID: 0}
     - target: {fileID: 5413937209288416303, guid: 79dcda81f62c3214ab4af5d787dc2c9e,
         type: 3}
@@ -6215,6 +6763,27 @@ PrefabInstance:
     - target: {fileID: 5400002201178540884, guid: 79dcda81f62c3214ab4af5d787dc2c9e,
         type: 3}
       propertyPath: BubblePrebab
+      value: 
+      objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
+        type: 3}
+    - target: {fileID: 5400002201178540884, guid: 79dcda81f62c3214ab4af5d787dc2c9e,
+        type: 3}
+      propertyPath: Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400002201178540884, guid: 79dcda81f62c3214ab4af5d787dc2c9e,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400002201178540884, guid: 79dcda81f62c3214ab4af5d787dc2c9e,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5400002201178540884, guid: 79dcda81f62c3214ab4af5d787dc2c9e,
+        type: 3}
+      propertyPath: BubblePrefab
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
@@ -6292,6 +6861,27 @@ PrefabInstance:
       propertyPath: BubblePrebab
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
+        type: 3}
+    - target: {fileID: 2732946518356942182, guid: d12c02357cb8d38439ca8b004ff9fa3d,
+        type: 3}
+      propertyPath: Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2732946518356942182, guid: d12c02357cb8d38439ca8b004ff9fa3d,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2732946518356942182, guid: d12c02357cb8d38439ca8b004ff9fa3d,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2732946518356942182, guid: d12c02357cb8d38439ca8b004ff9fa3d,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 7334009911922147141, guid: f5ff63d8af10d5e48a4197fb2679c8e4,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d12c02357cb8d38439ca8b004ff9fa3d, type: 3}
@@ -6447,7 +7037,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041658402}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.39, y: -1.3, z: 0}
+  m_LocalPosition: {x: -0.32, y: -1.86, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 810737387}
@@ -6605,6 +7195,27 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
+    - target: {fileID: 2502602927692750449, guid: 30f408d4fd308b54bbe11b4635160eac,
+        type: 3}
+      propertyPath: Mass
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2502602927692750449, guid: 30f408d4fd308b54bbe11b4635160eac,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2502602927692750449, guid: 30f408d4fd308b54bbe11b4635160eac,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2502602927692750449, guid: 30f408d4fd308b54bbe11b4635160eac,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 6578795510169116711, guid: e4e00e7668bf84247b87f666d5671002,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30f408d4fd308b54bbe11b4635160eac, type: 3}
 --- !u!1 &2146113552
@@ -6720,46 +7331,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8630453414684868638, guid: 6e278cbedba25f54ea162d59b9d61489,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8630453414684868638, guid: 6e278cbedba25f54ea162d59b9d61489,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 5351007194969487378, guid: 6e278cbedba25f54ea162d59b9d61489,
         type: 3}
-      propertyPath: Available.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5351007194969487378, guid: 6e278cbedba25f54ea162d59b9d61489,
-        type: 3}
-      propertyPath: Available.Array.data[1]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5351007194969487378, guid: 6e278cbedba25f54ea162d59b9d61489,
-        type: 3}
-      propertyPath: Available.Array.data[2]
+      propertyPath: Mass
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5351007194969487378, guid: 6e278cbedba25f54ea162d59b9d61489,
         type: 3}
-      propertyPath: Available.Array.data[3]
-      value: 3
+      propertyPath: ThrowDamage
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5351007194969487378, guid: 6e278cbedba25f54ea162d59b9d61489,
         type: 3}
-      propertyPath: Available.Array.data[4]
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5351007194969487378, guid: 6e278cbedba25f54ea162d59b9d61489,
-        type: 3}
-      propertyPath: BubblePrebab
+      propertyPath: BubblePrefab
       value: 
-      objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
+      objectReference: {fileID: 8408753350403061540, guid: f77ccfcd7e117874eb23202748a28ad4,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e278cbedba25f54ea162d59b9d61489, type: 3}
@@ -6872,6 +7458,27 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
+    - target: {fileID: 5766177841205229520, guid: 626a4b25e24fe6b46b6f018b54a489a2,
+        type: 3}
+      propertyPath: Mass
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766177841205229520, guid: 626a4b25e24fe6b46b6f018b54a489a2,
+        type: 3}
+      propertyPath: ThrowDamage
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766177841205229520, guid: 626a4b25e24fe6b46b6f018b54a489a2,
+        type: 3}
+      propertyPath: StrikeDamage
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766177841205229520, guid: 626a4b25e24fe6b46b6f018b54a489a2,
+        type: 3}
+      propertyPath: BubblePrefab
+      value: 
+      objectReference: {fileID: 2025199740567772217, guid: 62671cfadd34a1347b3468323dbf214a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 626a4b25e24fe6b46b6f018b54a489a2, type: 3}
 --- !u!4 &2524965558029695065 stripped
@@ -6955,9 +7562,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1470103846395010097, guid: 435647cca9694244bb7552fb044c00cf,
         type: 3}
-      propertyPath: BubblePrebab
+      propertyPath: BubblePrefab
       value: 
-      objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
+      objectReference: {fileID: 6578795510169116711, guid: e4e00e7668bf84247b87f666d5671002,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 435647cca9694244bb7552fb044c00cf, type: 3}
@@ -7000,12 +7607,12 @@ PrefabInstance:
     - target: {fileID: 8330697747920768567, guid: 2c12f538b0325c24fa5469ff85f0afbb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.011
+      value: -2.13
       objectReference: {fileID: 0}
     - target: {fileID: 8330697747920768567, guid: 2c12f538b0325c24fa5469ff85f0afbb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.098
+      value: 18.41
       objectReference: {fileID: 0}
     - target: {fileID: 8330697747920768567, guid: 2c12f538b0325c24fa5469ff85f0afbb,
         type: 3}
@@ -7054,32 +7661,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7042735705288038040, guid: 2c12f538b0325c24fa5469ff85f0afbb,
         type: 3}
-      propertyPath: Available.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7042735705288038040, guid: 2c12f538b0325c24fa5469ff85f0afbb,
-        type: 3}
-      propertyPath: Available.Array.data[1]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7042735705288038040, guid: 2c12f538b0325c24fa5469ff85f0afbb,
-        type: 3}
-      propertyPath: Available.Array.data[2]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7042735705288038040, guid: 2c12f538b0325c24fa5469ff85f0afbb,
-        type: 3}
-      propertyPath: Available.Array.data[3]
+      propertyPath: Mass
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7042735705288038040, guid: 2c12f538b0325c24fa5469ff85f0afbb,
         type: 3}
-      propertyPath: Available.Array.data[4]
-      value: 4
+      propertyPath: ThrowDamage
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7042735705288038040, guid: 2c12f538b0325c24fa5469ff85f0afbb,
         type: 3}
-      propertyPath: BubblePrebab
+      propertyPath: StrikeDamage
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7042735705288038040, guid: 2c12f538b0325c24fa5469ff85f0afbb,
+        type: 3}
+      propertyPath: BubblePrefab
       value: 
       objectReference: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
         type: 3}
