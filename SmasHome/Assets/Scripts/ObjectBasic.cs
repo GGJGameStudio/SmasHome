@@ -33,8 +33,6 @@ public class ObjectBasic : MonoBehaviour
     protected virtual void Start()
     {
         Owner = -1;
-        Flying = false;
-        Striking = false;
         Timer = 0f;
         
         startPosition = transform.position;
@@ -72,9 +70,8 @@ public class ObjectBasic : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-
-
-        PostUpdate();
+        
+        PostUpdate(Time.deltaTime);
     }
 
     public void Reset()
@@ -157,7 +154,7 @@ public class ObjectBasic : MonoBehaviour
         //rien
     }
 
-    public virtual void PostUpdate()
+    public virtual void PostUpdate(float deltaTime)
     {
         //rien
     }
