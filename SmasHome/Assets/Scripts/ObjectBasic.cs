@@ -23,6 +23,8 @@ public class ObjectBasic : MonoBehaviour
 
     private GameObject arena;
 
+    public Object BubblePrebab;
+
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -66,6 +68,10 @@ public class ObjectBasic : MonoBehaviour
     {
         transform.position = startPosition;
         Timer = 0f;
+        if (LifeTime != -1)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public virtual void Throw(bool rightdir, float throwtimer, float throwForceMultiplier)
@@ -82,11 +88,35 @@ public class ObjectBasic : MonoBehaviour
     public virtual void ThrowHit(GameObject player)
     {
         player.GetComponent<PlayerController>().Age += ThrowDamage;
+
+        var bubblePos = player.transform.position;
+
+        bubblePos.x += 0.5f;
+        bubblePos.y += 0.5f;
+
+        var bubble = Instantiate(BubblePrebab, bubblePos, Quaternion.identity) as GameObject;
+
+        if (bubble != null)
+        {
+            bubble.GetComponent<BubbleBehaviour>().Pop();
+        }
     }
 
     public virtual void StrikeHit(GameObject player)
     {
         player.GetComponent<PlayerController>().Age += StrikeDamage;
+        
+        var bubblePos = player.transform.position;
+
+        bubblePos.x += 0.5f;
+        bubblePos.y += 0.5f;
+
+        var bubble = Instantiate(BubblePrebab, bubblePos, Quaternion.identity) as GameObject;
+
+        if (bubble != null)
+        {
+            bubble.GetComponent<BubbleBehaviour>().Pop();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)

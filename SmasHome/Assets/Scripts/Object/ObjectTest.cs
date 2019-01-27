@@ -23,34 +23,10 @@ public class ObjectTest : ObjectBasic
     public override void StrikeHit(GameObject player)
     {
         base.StrikeHit(player);
-
-        var bubblePos = player.transform.position;
-
-        bubblePos.x += 0.5f;
-        bubblePos.y += 0.5f;
-
-        var bubble = Instantiate(bubblePrefab, bubblePos, Quaternion.identity) as GameObject;
-
-        if (bubble != null)
-        {
-            bubble.GetComponent<BubbleBehaviour>().Pop();
-        }
     }
 
     public override void ThrowHit(GameObject player)
     {
         base.ThrowHit(player);
-
-        var bubblePos = player.transform.position;
-
-        bubblePos.x += 0.5f;
-        bubblePos.y += 0.5f;
-
-        var bubble = Instantiate(bubblePrefab, bubblePos, Quaternion.identity) as GameObject;
-
-        if (bubble != null)
-        {
-            bubble.GetComponent<BubbleBehaviour>().Pop();
-        }
     }
 }
