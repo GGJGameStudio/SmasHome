@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ArenaController : MonoBehaviour
@@ -112,7 +113,17 @@ public class ArenaController : MonoBehaviour
 
     private void Win(GameObject winner)
     {
-        //TODO
-        //Debug.Log(winner.GetComponent<PlayerController>().PlayerNumber);
+        Global.Winner = winner.GetComponent<PlayerController>().PlayerNumber;
+
+        // TODO : confetis
+
+        StartCoroutine(ChangeScene());
+    }
+
+    private IEnumerator ChangeScene()
+    {
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene(2);
     }
 }

@@ -4,11 +4,23 @@ using UnityEngine;
 
 public class ObjectCaca : ObjectBasic
 {
+    [SerializeField] private List<AudioClip> clips;
+
     // Start is called before the first frame update
+
+
     protected override void Start()
     {
         base.Start();
+        AudioSource audioPlayer = GetComponent<AudioSource>();
+        int id = Random.Range((int)0, (int)clips.Count);
+        audioPlayer.Stop();
+        audioPlayer.loop = false;
+        audioPlayer.clip = clips[id];
+        audioPlayer.Play();
+
     }
+
 
     public override void Throw(bool rightdir, float throwtimer, float throwForceMultiplier)
     {
