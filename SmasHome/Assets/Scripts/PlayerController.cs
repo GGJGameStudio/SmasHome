@@ -265,14 +265,14 @@ public class PlayerController : MonoBehaviour
             if (grabbed != null)
             {
                 grabbed.transform.parent = null;
-                grabbed.GetComponent<BoxCollider2D>().enabled = true;
+                grabbed.GetComponent<Collider2D>().enabled = true;
                 grabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
                 grabbed.layer = LayerMask.NameToLayer("Object");
                 grabbed.GetComponent<ObjectBasic>().Throw(rightdir, throwTimer, ThrowForce);
                 grabbed.GetComponent<ObjectBasic>().Flying = true;
                 grabbed.GetComponent<ObjectBasic>().Owner = -1;
-                Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), grabbed.GetComponent<Collider2D>(), true);
-                StartCoroutine(EnableCollision(gameObject.GetComponent<BoxCollider2D>(), grabbed.GetComponent<Collider2D>()));
+                Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), grabbed.GetComponent<Collider2D>(), true);
+                StartCoroutine(EnableCollision(gameObject.GetComponent<Collider2D>(), grabbed.GetComponent<Collider2D>()));
                 grabbed = null;
                 throwing = false;
             }
@@ -296,7 +296,7 @@ public class PlayerController : MonoBehaviour
 
                     grabbed.transform.parent = grab.transform;
                     grabbed.transform.localPosition = Vector3.zero;
-                    grabbed.GetComponent<BoxCollider2D>().enabled = false;
+                    grabbed.GetComponent<Collider2D>().enabled = false;
                     grabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
                     grabbed.GetComponent<ObjectBasic>().Owner = PlayerNumber;
                     grabbed.GetComponent<ObjectBasic>().Timer = 0f;
@@ -344,8 +344,8 @@ public class PlayerController : MonoBehaviour
             if (grabbed != null)
             {
                 grabbed.GetComponent<ObjectBasic>().Strike(rightdir);
-                grabbed.GetComponent<BoxCollider2D>().enabled = true;
-                grabbed.GetComponent<BoxCollider2D>().isTrigger = true;
+                grabbed.GetComponent<Collider2D>().enabled = true;
+                grabbed.GetComponent<Collider2D>().isTrigger = true;
                 grabbed.GetComponent<ObjectBasic>().Striking = true;
                 strikeTimer = 0.5f;
             }
@@ -356,8 +356,8 @@ public class PlayerController : MonoBehaviour
         }
         if (strikeTimer < 0 && grabbed != null)
         {
-            grabbed.GetComponent<BoxCollider2D>().enabled = false;
-            grabbed.GetComponent<BoxCollider2D>().isTrigger = false;
+            grabbed.GetComponent<Collider2D>().enabled = false;
+            grabbed.GetComponent<Collider2D>().isTrigger = false;
             grabbed.GetComponent<ObjectBasic>().Striking = false;
         }
     }
@@ -464,14 +464,14 @@ public class PlayerController : MonoBehaviour
         if (grabbed != null)
         {
             grabbed.transform.parent = null;
-            grabbed.GetComponent<BoxCollider2D>().enabled = true;
+            grabbed.GetComponent<Collider2D>().enabled = true;
             grabbed.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
             grabbed.layer = LayerMask.NameToLayer("Object");
             grabbed.GetComponent<ObjectBasic>().Throw(rightdir, throwTimer, 0);
             grabbed.GetComponent<ObjectBasic>().Flying = true;
             grabbed.GetComponent<ObjectBasic>().Owner = -1;
-            Physics2D.IgnoreCollision(gameObject.GetComponent<BoxCollider2D>(), grabbed.GetComponent<Collider2D>(), true);
-            StartCoroutine(EnableCollision(gameObject.GetComponent<BoxCollider2D>(), grabbed.GetComponent<Collider2D>()));
+            Physics2D.IgnoreCollision(gameObject.GetComponent<Collider2D>(), grabbed.GetComponent<Collider2D>(), true);
+            StartCoroutine(EnableCollision(gameObject.GetComponent<Collider2D>(), grabbed.GetComponent<Collider2D>()));
             grabbed = null;
             throwing = false;
         }
