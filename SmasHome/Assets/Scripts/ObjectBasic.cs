@@ -87,6 +87,17 @@ public class ObjectBasic : MonoBehaviour
         }
     }
 
+    public void UpdateGrab(bool rightdir)
+    {
+        if (rightdir)
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        } else
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
+    }
+
     public virtual void Throw(bool rightdir, float throwtimer, float throwForceMultiplier)
     {
         gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2((rightdir ? 1 : -1) * 20 * throwtimer * throwForceMultiplier, 2 * throwtimer * throwForceMultiplier), ForceMode2D.Impulse);
@@ -194,15 +205,16 @@ public class ObjectBasic : MonoBehaviour
                     gameObject.GetComponent<Rigidbody2D>().angularVelocity = 0f;
                 }
 
+                gameObject.GetComponent<SpriteRenderer>().flipX = false;
                 gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Back";
                 gameObject.GetComponent<ObjectBasic>().Timer = 0f;
                 gameObject.layer = LayerMask.NameToLayer("ObjectBack");
                 var delta = gameObject.transform.position - new Vector3(contact.point.x, contact.point.y, gameObject.transform.position.z);
                 gameObject.transform.position = gameObject.transform.position - (delta * 0.5f);
                 var angle = Mathf.Atan2(delta.y, delta.x) * 180 / Mathf.PI;
-                gameObject.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, angle - 45 + 180));
                 gameObject.transform.parent = obj.transform;
                 gameObject.transform.localScale = new Vector3(1 / obj.transform.localScale.x, 1 / obj.transform.localScale.y, 1 / obj.transform.localScale.z);
+                gameObject.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, angle - 45 + 180));
             }
         }
     }

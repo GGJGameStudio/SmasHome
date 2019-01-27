@@ -215,6 +215,11 @@ public class PlayerController : MonoBehaviour
             rightdir = true;
         }
 
+        if (grabbed != null)
+        {
+            grabbed.GetComponent<ObjectBasic>().UpdateGrab(rightdir);
+        }
+
         //Jump
         if (Input.GetButtonDown("Jump" + PlayerNumber) && (onFloor || CurrentPhase == PlayerPhase.GHOST) && CurrentPhase > PlayerPhase.BABY)
         {
