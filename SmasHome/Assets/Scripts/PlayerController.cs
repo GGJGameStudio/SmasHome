@@ -443,7 +443,7 @@ public class PlayerController : MonoBehaviour
             CurrentPhase = newphase;
             Speed = 1;
             JumpForce = 0;
-            ThrowForce = 1f;
+            ThrowForce = 0.5f;
             MaxCarryWeigth = 1f;
         }
         else if (Age < 10)
