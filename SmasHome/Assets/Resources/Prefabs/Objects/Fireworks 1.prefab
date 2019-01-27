@@ -149,7 +149,8 @@ MonoBehaviour:
   StrikeDamage: 2
   LifeTime: -1
   Available: 0000000001000000020000000300000004000000
-  BubblePrebab: {fileID: 0}
+  BubblePrefab: {fileID: 2231313293872522074, guid: de04b49ccf7c37b4abcf2a3ff0bf67b0,
+    type: 3}
   InfiniteObject: {fileID: 0}
   ExplodeOnHit: 1
   ExplosionEffect: {fileID: 5410640638732047265, guid: 2b611bcb537018e4ca380ab21f3cbfbf,

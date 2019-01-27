@@ -94,33 +94,40 @@ public class ObjectBasic : MonoBehaviour
     {
         player.GetComponent<PlayerController>().Age += ThrowDamage;
 
-        var bubblePos = player.transform.position;
-
-        bubblePos.x += 0.5f;
-        bubblePos.y += 0.5f;
-
-        var bubble = Instantiate(BubblePrefab, bubblePos, Quaternion.identity) as GameObject;
-
-        if (bubble != null)
+        if (BubblePrefab != null)
         {
-            bubble.GetComponent<BasicBubbleBehaviour>().Pop();
+            var bubblePos = player.transform.position;
+
+            bubblePos.x += 0.5f;
+            bubblePos.y += 0.5f;
+
+            var bubble = Instantiate(BubblePrefab, bubblePos, Quaternion.identity) as GameObject;
+
+            if (bubble != null)
+            {
+                bubble.GetComponent<BasicBubbleBehaviour>().Pop();
+            }
         }
+        
     }
 
     public virtual void StrikeHit(GameObject player)
     {
         player.GetComponent<PlayerController>().Age += StrikeDamage;
-        
-        var bubblePos = player.transform.position;
 
-        bubblePos.x += 0.5f;
-        bubblePos.y += 0.5f;
-
-        var bubble = Instantiate(BubblePrefab, bubblePos, Quaternion.identity) as GameObject;
-
-        if (bubble != null)
+        if (BubblePrefab != null)
         {
-            bubble.GetComponent<BasicBubbleBehaviour>().Pop();
+            var bubblePos = player.transform.position;
+
+            bubblePos.x += 0.5f;
+            bubblePos.y += 0.5f;
+
+            var bubble = Instantiate(BubblePrefab, bubblePos, Quaternion.identity) as GameObject;
+
+            if (bubble != null)
+            {
+                bubble.GetComponent<BasicBubbleBehaviour>().Pop();
+            }
         }
     }
 
