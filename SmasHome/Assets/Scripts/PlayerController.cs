@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private Object pooPrefab;
+
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private Rigidbody2D rigidbody;
@@ -12,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private bool front;
     private bool rightdir;
     private GameObject grabbed;
+    private float pooTimer;
     private float strikeTimer;
     private float throwTimer;
     private bool throwing;
@@ -160,6 +163,8 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        pooPrefab = Resources.Load("Prefabs/Objects/Poo");
+
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigidbody = GetComponent<Rigidbody2D>();
@@ -255,7 +260,6 @@ public class PlayerController : MonoBehaviour
         var grab = gameObject.transform.Find("Grab").GetComponent<Grab>();
         grab.transform.localPosition = new Vector3((rightdir ? 1 : -1) * Mathf.Abs(grab.transform.localPosition.x), grab.transform.localPosition.y, grab.transform.localPosition.z);
         
-
         if (Input.GetButtonUp("Grab" + PlayerNumber) && throwing)
         {
             if (grabbed != null)
@@ -309,6 +313,14 @@ public class PlayerController : MonoBehaviour
         {
             grabbed.transform.localPosition = Vector3.zero;
             grabbed.transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+
+        // Poo time!!!
+        pooTimer -= Time.deltaTime;
+        if (pooTimer < 0 && CurrentPhase == PlayerPhase.BABY && Input.GetButton("Strike" + PlayerNumber))
+        {
+            pooTimer = 2f;
+            Instantiate(pooPrefab, transform.position, Quaternion.identity);
         }
 
         //strike
